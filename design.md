@@ -176,6 +176,40 @@ colors:
   website-logo-violet: "#6445FF"
   website-logo-magenta: "#AE62FF"
 
+gradients:
+  product-brand: "linear-gradient(135deg, #3369ff 0%, #101828 100%)"
+  shimmer-light: "linear-gradient(90deg, hsl(var(--gray-11)) 0%, hsl(var(--gray-11)) 40%, hsl(var(--gray-6)) 50%, hsl(var(--gray-11)) 60%, hsl(var(--gray-11)) 100%)"
+  shimmer-dark: "linear-gradient(90deg, hsl(var(--gray-9)) 0%, hsl(var(--gray-9)) 40%, hsl(var(--gray-7)) 50%, hsl(var(--gray-9)) 60%, hsl(var(--gray-9)) 100%)"
+  video-controls-overlay: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.75) 100%)"
+  think-shine: "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)"
+  glow-border-conic: "conic-gradient(from var(--glow-angle, 0deg), #67e8f9, #22d3ee, #06b6d4, #a78bfa, #8b5cf6, #c4b5fd, #a78bfa, #22d3ee, #67e8f9)"
+  mobile-upload-background: "linear-gradient(to bottom, hsl(var(--gray-1)) 0%, hsl(var(--info-2)) 100%)"
+  dotted-background-light: "radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)"
+  dotted-background-dark: "radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)"
+  top-scroll-mask: "linear-gradient(to bottom, black, transparent)"
+  gallery-scroll-mask: "linear-gradient(to bottom, transparent 0px, black 48px)"
+  ai-panel-light: "linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)"
+  ai-panel-dark: "linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)"
+  export-success-background: "linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)"
+  seedance-ribbon: "linear-gradient(90deg, #9e61ff 0%, #619bff 50%, #6c52ee 100%)"
+  seedance-discord-text: "linear-gradient(to right, #9e61ff, #619bff, #45d6c8)"
+  seedance-discord-soft: "linear-gradient(to right, rgb(158 97 255 / 10%), rgb(97 155 255 / 10%), rgb(69 214 200 / 10%))"
+  pro-dark-card: "linear-gradient(135deg, #7C3AED 0%, #13141D 100%)"
+  pro-purple-card: "linear-gradient(135deg, #AE62FF 0%, #C88AFF 100%)"
+  starter-light-card: "linear-gradient(135deg, #E8F4FF 0%, #D4ECFF 100%)"
+  success-light-card: "linear-gradient(135deg, #E8FFEA 0%, #D4F5D7 100%)"
+  plan-free-overlay: "linear-gradient(25.93deg, rgba(107, 114, 128, 0) 65.61%, rgba(107, 114, 128, 0.12) 98.99%)"
+  plan-starter-overlay: "linear-gradient(25.93deg, rgba(93, 223, 224, 0) 65.61%, rgba(93, 223, 224, 0.25) 98.99%)"
+  plan-pro-overlay: "linear-gradient(25.93deg, rgba(174, 98, 255, 0) 65.61%, rgba(174, 98, 255, 0.12) 98.99%)"
+  plan-booster-overlay: "linear-gradient(25.93deg, rgba(229, 169, 19, 0) 65.61%, rgba(229, 169, 19, 0.12) 98.99%)"
+  plan-progress-cyan: "linear-gradient(90deg, #0AFFBE 0%, #4EADF3 100%)"
+  website-logo: "linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)"
+  website-nav-light: "linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)"
+  website-nav-dark: "linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)"
+  website-modal-teal: "linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff"
+  website-text-shimmer: "linear-gradient(90deg, var(--base-color) 0%, #7145FE 42%, #7145FE calc(50% - var(--spread)), #CD98FF calc(50% + var(--spread)), #CD98FF 58%, var(--base-color) 100%)"
+  website-docs-text: "linear-gradient(90deg, #4B3F72 0%, #7B2FBE 50%, #A855F7 100%)"
+
 typography:
   ui-body:
     fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
@@ -408,6 +442,57 @@ Dark status ramps are also defined explicitly in `globals.css`, not generated at
 - Logo gradient: `#308DFF -> #38ADFF -> #687CFF -> #6445FF -> #AE62FF`.
 - Marketing purple used in many website CTAs and blog surfaces: `#7145FE`.
 - Website shadcn defaults also define `--primary: 0 0% 9%`, `--background: 0 0% 100%`, etc.; do not confuse those with `@nemo/design` product tokens.
+
+## Gradients
+
+Gradients are part of the codebase visual system and must be documented with direction, stops, and source layer. Repeated uses of the same gradient are documented once. Gradients from proposals, docs-only examples, generated SEO HTML data, and Storybook-only demos are not normative.
+
+### Product Design Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `product-brand` | `linear-gradient(135deg, #3369ff 0%, #101828 100%)` | `packages/design/src/styles/globals.css` `.bg-gradient-brand`; blue-to-ink brand utility |
+| `shimmer-light` | `linear-gradient(90deg, hsl(var(--gray-11)) 0%, hsl(var(--gray-11)) 40%, hsl(var(--gray-6)) 50%, hsl(var(--gray-11)) 60%, hsl(var(--gray-11)) 100%)` | `packages/design/src/styles/globals.css` `.animate-shimmer` light text shimmer |
+| `shimmer-dark` | `linear-gradient(90deg, hsl(var(--gray-9)) 0%, hsl(var(--gray-9)) 40%, hsl(var(--gray-7)) 50%, hsl(var(--gray-9)) 60%, hsl(var(--gray-9)) 100%)` | `packages/design/src/styles/globals.css` `.dark .animate-shimmer` |
+| `video-controls-overlay` | `linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.75) 100%)` | `packages/design/src/components/ui/video-player/constants.ts`; video control overlay fade |
+| `think-shine` | `linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)` | `packages/design/src/components/ui/think/components/ThinkTitle.tsx`; thinking-title shine sweep |
+| `glow-border-conic` | `conic-gradient(from var(--glow-angle, 0deg), #67e8f9, #22d3ee, #06b6d4, #a78bfa, #8b5cf6, #c4b5fd, #a78bfa, #22d3ee, #67e8f9)` | `packages/nemovideo-business/components/src/GlowBorder/GlowBorder.css`; animated AI glow border |
+
+### Product App Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `mobile-upload-background` | `linear-gradient(to bottom, hsl(var(--gray-1)) 0%, hsl(var(--info-2)) 100%)` | mobile upload page background |
+| `dotted-background-light` | `radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in light mode |
+| `dotted-background-dark` | `radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in dark mode |
+| `top-scroll-mask` | `linear-gradient(to bottom, black, transparent)` | workspace top mask and fade overlays |
+| `gallery-scroll-mask` | `linear-gradient(to bottom, transparent 0px, black 48px)` | task gallery scroll mask; 48px equals `GALLERY_SCROLL_MASK_FADE_LENGTH_PX` |
+| `ai-panel-light` | `linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)` | task AI panel background in light mode |
+| `ai-panel-dark` | `linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)` | task AI panel background in dark mode |
+| `export-success-background` | `linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)` | export modal success surface |
+| `seedance-ribbon` | `linear-gradient(90deg, #9e61ff 0%, #619bff 50%, #6c52ee 100%)` | Seedance 2 top banner and website Seedance ribbon; Tailwind form is `bg-gradient-to-r from-[#9e61ff] via-[#619bff] to-[#6c52ee]` |
+| `seedance-discord-text` | `linear-gradient(to right, #9e61ff, #619bff, #45d6c8)` | Seedance Discord floating banner text |
+| `seedance-discord-soft` | `linear-gradient(to right, rgb(158 97 255 / 10%), rgb(97 155 255 / 10%), rgb(69 214 200 / 10%))` | Seedance Discord floating banner background; hover uses 15% alpha stops |
+| `pro-dark-card` | `linear-gradient(135deg, #7C3AED 0%, #13141D 100%)` | user card, usage modal, Seedance lock, premium dark card surfaces |
+| `pro-purple-card` | `linear-gradient(135deg, #AE62FF 0%, #C88AFF 100%)` | usage modal business/pro purple surface |
+| `starter-light-card` | `linear-gradient(135deg, #E8F4FF 0%, #D4ECFF 100%)` | usage modal starter/free light blue surface |
+| `success-light-card` | `linear-gradient(135deg, #E8FFEA 0%, #D4F5D7 100%)` | usage modal success/green surface |
+| `plan-free-overlay` | `linear-gradient(25.93deg, rgba(107, 114, 128, 0) 65.61%, rgba(107, 114, 128, 0.12) 98.99%)` | upgrade/payment free plan card overlay |
+| `plan-starter-overlay` | `linear-gradient(25.93deg, rgba(93, 223, 224, 0) 65.61%, rgba(93, 223, 224, 0.25) 98.99%)` | upgrade/payment starter plan card overlay |
+| `plan-pro-overlay` | `linear-gradient(25.93deg, rgba(174, 98, 255, 0) 65.61%, rgba(174, 98, 255, 0.12) 98.99%)` | upgrade/payment pro plan card overlay |
+| `plan-booster-overlay` | `linear-gradient(25.93deg, rgba(229, 169, 19, 0) 65.61%, rgba(229, 169, 19, 0.12) 98.99%)` | credit booster pack overlay |
+| `plan-progress-cyan` | `linear-gradient(90deg, #0AFFBE 0%, #4EADF3 100%)` | plan card progress/active meter |
+
+### Website Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `website-logo` | `linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)` | website logo/brand mark gradient stops |
+| `website-nav-light` | `linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)` | `apps/nemovideo-website/src/app/globals.css` `.nemo-home-nav` |
+| `website-nav-dark` | `linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)` | Seedance dark navbar override |
+| `website-modal-teal` | `linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff` | website mobile/PC auth modal surfaces |
+| `website-text-shimmer` | `linear-gradient(90deg, var(--base-color) 0%, #7145FE 42%, #7145FE calc(50% - var(--spread)), #CD98FF calc(50% + var(--spread)), #CD98FF 58%, var(--base-color) 100%)` | `apps/nemovideo-website/src/components/text-shimmer.tsx` |
+| `website-docs-text` | `linear-gradient(90deg, #4B3F72 0%, #7B2FBE 50%, #A855F7 100%)` | docs page headline/accent text gradient |
 
 ## Typography
 

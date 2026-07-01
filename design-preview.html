@@ -187,6 +187,40 @@ colors:
   website-logo-violet: "#6445FF"
   website-logo-magenta: "#AE62FF"
 
+gradients:
+  product-brand: "linear-gradient(135deg, #3369ff 0%, #101828 100%)"
+  shimmer-light: "linear-gradient(90deg, hsl(var(--gray-11)) 0%, hsl(var(--gray-11)) 40%, hsl(var(--gray-6)) 50%, hsl(var(--gray-11)) 60%, hsl(var(--gray-11)) 100%)"
+  shimmer-dark: "linear-gradient(90deg, hsl(var(--gray-9)) 0%, hsl(var(--gray-9)) 40%, hsl(var(--gray-7)) 50%, hsl(var(--gray-9)) 60%, hsl(var(--gray-9)) 100%)"
+  video-controls-overlay: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.75) 100%)"
+  think-shine: "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)"
+  glow-border-conic: "conic-gradient(from var(--glow-angle, 0deg), #67e8f9, #22d3ee, #06b6d4, #a78bfa, #8b5cf6, #c4b5fd, #a78bfa, #22d3ee, #67e8f9)"
+  mobile-upload-background: "linear-gradient(to bottom, hsl(var(--gray-1)) 0%, hsl(var(--info-2)) 100%)"
+  dotted-background-light: "radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)"
+  dotted-background-dark: "radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)"
+  top-scroll-mask: "linear-gradient(to bottom, black, transparent)"
+  gallery-scroll-mask: "linear-gradient(to bottom, transparent 0px, black 48px)"
+  ai-panel-light: "linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)"
+  ai-panel-dark: "linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)"
+  export-success-background: "linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)"
+  seedance-ribbon: "linear-gradient(90deg, #9e61ff 0%, #619bff 50%, #6c52ee 100%)"
+  seedance-discord-text: "linear-gradient(to right, #9e61ff, #619bff, #45d6c8)"
+  seedance-discord-soft: "linear-gradient(to right, rgb(158 97 255 / 10%), rgb(97 155 255 / 10%), rgb(69 214 200 / 10%))"
+  pro-dark-card: "linear-gradient(135deg, #7C3AED 0%, #13141D 100%)"
+  pro-purple-card: "linear-gradient(135deg, #AE62FF 0%, #C88AFF 100%)"
+  starter-light-card: "linear-gradient(135deg, #E8F4FF 0%, #D4ECFF 100%)"
+  success-light-card: "linear-gradient(135deg, #E8FFEA 0%, #D4F5D7 100%)"
+  plan-free-overlay: "linear-gradient(25.93deg, rgba(107, 114, 128, 0) 65.61%, rgba(107, 114, 128, 0.12) 98.99%)"
+  plan-starter-overlay: "linear-gradient(25.93deg, rgba(93, 223, 224, 0) 65.61%, rgba(93, 223, 224, 0.25) 98.99%)"
+  plan-pro-overlay: "linear-gradient(25.93deg, rgba(174, 98, 255, 0) 65.61%, rgba(174, 98, 255, 0.12) 98.99%)"
+  plan-booster-overlay: "linear-gradient(25.93deg, rgba(229, 169, 19, 0) 65.61%, rgba(229, 169, 19, 0.12) 98.99%)"
+  plan-progress-cyan: "linear-gradient(90deg, #0AFFBE 0%, #4EADF3 100%)"
+  website-logo: "linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)"
+  website-nav-light: "linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)"
+  website-nav-dark: "linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)"
+  website-modal-teal: "linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff"
+  website-text-shimmer: "linear-gradient(90deg, var(--base-color) 0%, #7145FE 42%, #7145FE calc(50% - var(--spread)), #CD98FF calc(50% + var(--spread)), #CD98FF 58%, var(--base-color) 100%)"
+  website-docs-text: "linear-gradient(90deg, #4B3F72 0%, #7B2FBE 50%, #A855F7 100%)"
+
 typography:
   ui-body:
     fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
@@ -420,6 +454,57 @@ Dark status ramps are also defined explicitly in `globals.css`, not generated at
 - Marketing purple used in many website CTAs and blog surfaces: `#7145FE`.
 - Website shadcn defaults also define `--primary: 0 0% 9%`, `--background: 0 0% 100%`, etc.; do not confuse those with `@nemo/design` product tokens.
 
+## Gradients
+
+Gradients are part of the codebase visual system and must be documented with direction, stops, and source layer. Repeated uses of the same gradient are documented once. Gradients from proposals, docs-only examples, generated SEO HTML data, and Storybook-only demos are not normative.
+
+### Product Design Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `product-brand` | `linear-gradient(135deg, #3369ff 0%, #101828 100%)` | `packages/design/src/styles/globals.css` `.bg-gradient-brand`; blue-to-ink brand utility |
+| `shimmer-light` | `linear-gradient(90deg, hsl(var(--gray-11)) 0%, hsl(var(--gray-11)) 40%, hsl(var(--gray-6)) 50%, hsl(var(--gray-11)) 60%, hsl(var(--gray-11)) 100%)` | `packages/design/src/styles/globals.css` `.animate-shimmer` light text shimmer |
+| `shimmer-dark` | `linear-gradient(90deg, hsl(var(--gray-9)) 0%, hsl(var(--gray-9)) 40%, hsl(var(--gray-7)) 50%, hsl(var(--gray-9)) 60%, hsl(var(--gray-9)) 100%)` | `packages/design/src/styles/globals.css` `.dark .animate-shimmer` |
+| `video-controls-overlay` | `linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.75) 100%)` | `packages/design/src/components/ui/video-player/constants.ts`; video control overlay fade |
+| `think-shine` | `linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)` | `packages/design/src/components/ui/think/components/ThinkTitle.tsx`; thinking-title shine sweep |
+| `glow-border-conic` | `conic-gradient(from var(--glow-angle, 0deg), #67e8f9, #22d3ee, #06b6d4, #a78bfa, #8b5cf6, #c4b5fd, #a78bfa, #22d3ee, #67e8f9)` | `packages/nemovideo-business/components/src/GlowBorder/GlowBorder.css`; animated AI glow border |
+
+### Product App Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `mobile-upload-background` | `linear-gradient(to bottom, hsl(var(--gray-1)) 0%, hsl(var(--info-2)) 100%)` | mobile upload page background |
+| `dotted-background-light` | `radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in light mode |
+| `dotted-background-dark` | `radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in dark mode |
+| `top-scroll-mask` | `linear-gradient(to bottom, black, transparent)` | workspace top mask and fade overlays |
+| `gallery-scroll-mask` | `linear-gradient(to bottom, transparent 0px, black 48px)` | task gallery scroll mask; 48px equals `GALLERY_SCROLL_MASK_FADE_LENGTH_PX` |
+| `ai-panel-light` | `linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)` | task AI panel background in light mode |
+| `ai-panel-dark` | `linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)` | task AI panel background in dark mode |
+| `export-success-background` | `linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)` | export modal success surface |
+| `seedance-ribbon` | `linear-gradient(90deg, #9e61ff 0%, #619bff 50%, #6c52ee 100%)` | Seedance 2 top banner and website Seedance ribbon; Tailwind form is `bg-gradient-to-r from-[#9e61ff] via-[#619bff] to-[#6c52ee]` |
+| `seedance-discord-text` | `linear-gradient(to right, #9e61ff, #619bff, #45d6c8)` | Seedance Discord floating banner text |
+| `seedance-discord-soft` | `linear-gradient(to right, rgb(158 97 255 / 10%), rgb(97 155 255 / 10%), rgb(69 214 200 / 10%))` | Seedance Discord floating banner background; hover uses 15% alpha stops |
+| `pro-dark-card` | `linear-gradient(135deg, #7C3AED 0%, #13141D 100%)` | user card, usage modal, Seedance lock, premium dark card surfaces |
+| `pro-purple-card` | `linear-gradient(135deg, #AE62FF 0%, #C88AFF 100%)` | usage modal business/pro purple surface |
+| `starter-light-card` | `linear-gradient(135deg, #E8F4FF 0%, #D4ECFF 100%)` | usage modal starter/free light blue surface |
+| `success-light-card` | `linear-gradient(135deg, #E8FFEA 0%, #D4F5D7 100%)` | usage modal success/green surface |
+| `plan-free-overlay` | `linear-gradient(25.93deg, rgba(107, 114, 128, 0) 65.61%, rgba(107, 114, 128, 0.12) 98.99%)` | upgrade/payment free plan card overlay |
+| `plan-starter-overlay` | `linear-gradient(25.93deg, rgba(93, 223, 224, 0) 65.61%, rgba(93, 223, 224, 0.25) 98.99%)` | upgrade/payment starter plan card overlay |
+| `plan-pro-overlay` | `linear-gradient(25.93deg, rgba(174, 98, 255, 0) 65.61%, rgba(174, 98, 255, 0.12) 98.99%)` | upgrade/payment pro plan card overlay |
+| `plan-booster-overlay` | `linear-gradient(25.93deg, rgba(229, 169, 19, 0) 65.61%, rgba(229, 169, 19, 0.12) 98.99%)` | credit booster pack overlay |
+| `plan-progress-cyan` | `linear-gradient(90deg, #0AFFBE 0%, #4EADF3 100%)` | plan card progress/active meter |
+
+### Website Gradients
+
+| Token | Gradient | Source / usage |
+|---|---|---|
+| `website-logo` | `linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)` | website logo/brand mark gradient stops |
+| `website-nav-light` | `linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)` | `apps/nemovideo-website/src/app/globals.css` `.nemo-home-nav` |
+| `website-nav-dark` | `linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)` | Seedance dark navbar override |
+| `website-modal-teal` | `linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff` | website mobile/PC auth modal surfaces |
+| `website-text-shimmer` | `linear-gradient(90deg, var(--base-color) 0%, #7145FE 42%, #7145FE calc(50% - var(--spread)), #CD98FF calc(50% + var(--spread)), #CD98FF 58%, var(--base-color) 100%)` | `apps/nemovideo-website/src/components/text-shimmer.tsx` |
+| `website-docs-text` | `linear-gradient(90deg, #4B3F72 0%, #7B2FBE 50%, #A855F7 100%)` | docs page headline/accent text gradient |
+
 ## Typography
 
 The product UI font family is defined in `packages/design/tailwind.config.js`:
@@ -493,7 +578,7 @@ Use the exported component variants instead of creating new variant names. If a 
 - Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.
 - Don't invent new component variants when `Button`, `Badge`, `Card`, `Input`, and `Alert` already define the variants in code.
 </script>
-<div class="shell"><aside class="sidebar"><div class="brand"><div class="mark">N</div><div><strong>NemoVideo</strong><span class="mono">full design.md render</span></div></div><nav class="nav" aria-label="Preview sections"><a href="#tokens-colors">All Color Tokens</a><a href="#tokens-typography">Typography Tokens</a><a href="#tokens-rounded">Rounded Tokens</a><a href="#tokens-spacing">Spacing Tokens</a><a href="#tokens-components">Component Tokens</a><a href="#markdown-tables">All Markdown Tables</a><a href="#markdown-full">Full DESIGN.md</a></nav><div class="sidebar-note">This page renders every token from the DESIGN.md frontmatter and every Markdown table from the document body.</div></aside><main><header class="hero"><div class="kicker mono">NemoVideo DESIGN.md / complete render</div><h1>Every token and every table from <code>design.md</code>.</h1><p>Generated from the embedded current Markdown file, with product colors shown as live swatches and all other token groups rendered as structured tables.</p><div class="summary-row" id="summary"></div></header><div class="content"><section id="tokens-colors" class="panel"><div class="panel-header"><h2>All Color Tokens</h2><span class="count" id="color-count"></span></div><div class="panel-body"><div class="token-groups" id="color-groups"></div></div></section><section id="tokens-typography" class="panel"><div class="panel-header"><h2>Typography Tokens</h2><span class="count" id="typography-count"></span></div><div class="panel-body spec-stack" id="typography-tokens"></div></section><section id="tokens-rounded" class="panel"><div class="panel-header"><h2>Rounded Tokens</h2><span class="count" id="rounded-count"></span></div><div class="panel-body kv-table" id="rounded-tokens"></div></section><section id="tokens-spacing" class="panel"><div class="panel-header"><h2>Spacing Tokens</h2><span class="count" id="spacing-count"></span></div><div class="panel-body kv-table" id="spacing-tokens"></div></section><section id="tokens-components" class="panel"><div class="panel-header"><h2>Component Tokens</h2><span class="count" id="component-count"></span></div><div class="panel-body spec-stack" id="component-tokens"></div></section><section id="markdown-tables" class="panel"><div class="panel-header"><h2>All Markdown Tables</h2><span class="count" id="table-count"></span></div><div class="panel-body spec-stack" id="all-tables"></div></section><section id="markdown-full" class="panel"><div class="panel-header"><h2>Full DESIGN.md Body</h2><span class="count">Rendered prose, lists, code, and tables</span></div><div class="panel-body"><div class="markdown-body" id="markdown-body"></div></div></section></div></main></div>
+<div class="shell"><aside class="sidebar"><div class="brand"><div class="mark">N</div><div><strong>NemoVideo</strong><span class="mono">full design.md render</span></div></div><nav class="nav" aria-label="Preview sections"><a href="#tokens-colors">All Color Tokens</a><a href="#tokens-gradients">Gradient Tokens</a><a href="#tokens-typography">Typography Tokens</a><a href="#tokens-rounded">Rounded Tokens</a><a href="#tokens-spacing">Spacing Tokens</a><a href="#tokens-components">Component Tokens</a><a href="#markdown-tables">All Markdown Tables</a><a href="#markdown-full">Full DESIGN.md</a></nav><div class="sidebar-note">This page renders every token from the DESIGN.md frontmatter and every Markdown table from the document body.</div></aside><main><header class="hero"><div class="kicker mono">NemoVideo DESIGN.md / complete render</div><h1>Every token and every table from <code>design.md</code>.</h1><p>Generated from the embedded current Markdown file, with product colors shown as live swatches and all other token groups rendered as structured tables.</p><div class="summary-row" id="summary"></div></header><div class="content"><section id="tokens-colors" class="panel"><div class="panel-header"><h2>All Color Tokens</h2><span class="count" id="color-count"></span></div><div class="panel-body"><div class="token-groups" id="color-groups"></div></div></section><section id="tokens-gradients" class="panel"><div class="panel-header"><h2>Gradient Tokens</h2><span class="count" id="gradient-count"></span></div><div class="panel-body kv-table" id="gradient-tokens"></div></section><section id="tokens-typography" class="panel"><div class="panel-header"><h2>Typography Tokens</h2><span class="count" id="typography-count"></span></div><div class="panel-body spec-stack" id="typography-tokens"></div></section><section id="tokens-rounded" class="panel"><div class="panel-header"><h2>Rounded Tokens</h2><span class="count" id="rounded-count"></span></div><div class="panel-body kv-table" id="rounded-tokens"></div></section><section id="tokens-spacing" class="panel"><div class="panel-header"><h2>Spacing Tokens</h2><span class="count" id="spacing-count"></span></div><div class="panel-body kv-table" id="spacing-tokens"></div></section><section id="tokens-components" class="panel"><div class="panel-header"><h2>Component Tokens</h2><span class="count" id="component-count"></span></div><div class="panel-body spec-stack" id="component-tokens"></div></section><section id="markdown-tables" class="panel"><div class="panel-header"><h2>All Markdown Tables</h2><span class="count" id="table-count"></span></div><div class="panel-body spec-stack" id="all-tables"></div></section><section id="markdown-full" class="panel"><div class="panel-header"><h2>Full DESIGN.md Body</h2><span class="count">Rendered prose, lists, code, and tables</span></div><div class="panel-body"><div class="markdown-body" id="markdown-body"></div></div></section></div></main></div>
 <script>
 const raw=document.getElementById('design-md').textContent;
 const escapeHtml=(value)=>String(value??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -504,12 +589,13 @@ function colorGroup(name){if(name.startsWith('dark-success-'))return'dark-succes
 function luminanceFromCss(css){const probe=document.createElement('div');probe.style.color=css;document.body.appendChild(probe);const rgb=getComputedStyle(probe).color.match(/\d+(?:\.\d+)?/g)?.slice(0,3).map(Number)||[255,255,255];probe.remove();const [r,g,b]=rgb.map((c)=>{c/=255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);});return 0.2126*r+0.7152*g+0.0722*b;}
 function renderColorCard(token){const isColor=/^(hsl|rgb|#)/i.test(token.value);const swatchStyle=isColor?'--swatch: '+escapeHtml(token.value)+'; --swatch-text: '+(luminanceFromCss(token.value)<0.45?'#fff':'#101828'):'';const cls=isColor?'swatch':'swatch alias';return '<article class="token-card"><div class="'+cls+'" style="'+swatchStyle+'">'+escapeHtml(token.name)+'</div><div class="token-meta"><div class="token-name">'+escapeHtml(token.name)+'</div><div class="token-value">'+escapeHtml(token.value)+'</div></div></article>';}
 function renderColorGroups(colors){const grouped={};Object.entries(colors).forEach(([name,value])=>{const group=colorGroup(name);grouped[group]||=[];grouped[group].push({name,value});});const order=['brand','text-line-mask','gray','info','success','warning','error','fill','semantic-aliases','dark-brand','dark-gray','dark-info','dark-success','dark-warning','dark-error','dark-semantic','website-layer'];document.getElementById('color-groups').innerHTML=order.filter((name)=>grouped[name]).map((name)=>'<div><h3 class="group-title">'+escapeHtml(name.replace(/-/g,' '))+'</h3><div class="token-grid">'+grouped[name].map(renderColorCard).join('')+'</div></div>').join('');document.getElementById('color-count').textContent=Object.keys(colors).length+' tokens';}
+function renderGradientTokens(gradients){document.getElementById('gradient-tokens').innerHTML=renderTable(['Gradient token','CSS value'],Object.entries(gradients||{}));document.getElementById('gradient-count').textContent=Object.keys(gradients||{}).length+' tokens';}
 function renderTable(headers,rows){return '<div class="table-wrap"><table><thead><tr>'+headers.map((h)=>'<th>'+inlineMd(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map((row)=>'<tr>'+row.map((cell)=>'<td>'+inlineMd(cell)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';}
 function renderObjectTable(obj,label='Token'){const rows=Object.entries(obj||{}).map(([key,value])=>[key,value&&typeof value==='object'?JSON.stringify(value):String(value)]);return renderTable([label,'Value'],rows);}
 function renderNestedObjects(targetId,obj,countId){const entries=Object.entries(obj||{});document.getElementById(targetId).innerHTML=entries.map(([name,value])=>'<div><h3 class="group-title">'+escapeHtml(name)+'</h3><div class="kv-table">'+renderObjectTable(value,'Property')+'</div></div>').join('');document.getElementById(countId).textContent=entries.length+' tokens';}
 function extractTables(body){const lines=body.split('\n');const tables=[];for(let i=0;i<lines.length;i++){if(!lines[i].trim().startsWith('|'))continue;const block=[];while(i<lines.length&&lines[i].trim().startsWith('|'))block.push(lines[i++]);i--;if(block.length>=2&&/^\|?\s*:?-{3,}:?/.test(block[1].trim()))tables.push(block);}return tables.map((block)=>{const split=(line)=>line.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map((cell)=>cell.trim());return{headers:split(block[0]),rows:block.slice(2).map(split),raw:block.join('\n')};});}
 function renderMarkdown(body){const lines=body.split('\n');const out=[];let inCode=false;let code=[];let list=[];const flushList=()=>{if(!list.length)return;out.push('<ul>'+list.map((item)=>'<li>'+inlineMd(item)+'</li>').join('')+'</ul>');list=[];};for(let i=0;i<lines.length;i++){const line=lines[i];if(line.startsWith('```')){if(inCode){out.push('<pre><code>'+escapeHtml(code.join('\n'))+'</code></pre>');code=[];inCode=false;}else{flushList();inCode=true;}continue;}if(inCode){code.push(line);continue;}if(line.trim().startsWith('|')){flushList();const block=[];while(i<lines.length&&lines[i].trim().startsWith('|'))block.push(lines[i++]);i--;const table=extractTables(block.join('\n'))[0];if(table)out.push('<div class="markdown-table-anchor">'+renderTable(table.headers,table.rows)+'</div>');continue;}if(/^##\s+/.test(line)){flushList();out.push('<h2>'+inlineMd(line.replace(/^##\s+/,''))+'</h2>');continue;}if(/^###\s+/.test(line)){flushList();out.push('<h3>'+inlineMd(line.replace(/^###\s+/,''))+'</h3>');continue;}if(/^-\s+/.test(line)){list.push(line.replace(/^-\s+/,''));continue;}if(/^>\s?/.test(line)){flushList();out.push('<blockquote>'+inlineMd(line.replace(/^>\s?/,''))+'</blockquote>');continue;}if(!line.trim()){flushList();continue;}flushList();if(!/^#\s+/.test(line))out.push('<p>'+inlineMd(line)+'</p>');}flushList();return out.join('');}
-const doc=splitDocument(raw);const data=parseFrontmatter(doc.frontmatter);const tables=extractTables(doc.body);renderColorGroups(data.colors||{});renderNestedObjects('typography-tokens',data.typography||{},'typography-count');document.getElementById('rounded-tokens').innerHTML=renderObjectTable(data.rounded||{});document.getElementById('rounded-count').textContent=Object.keys(data.rounded||{}).length+' tokens';document.getElementById('spacing-tokens').innerHTML=renderObjectTable(data.spacing||{});document.getElementById('spacing-count').textContent=Object.keys(data.spacing||{}).length+' tokens';renderNestedObjects('component-tokens',data.components||{},'component-count');document.getElementById('table-count').textContent=tables.length+' tables';document.getElementById('all-tables').innerHTML=tables.map((table,index)=>'<div><h3 class="group-title">Markdown table '+(index+1)+'</h3>'+renderTable(table.headers,table.rows)+'</div>').join('');document.getElementById('markdown-body').innerHTML=renderMarkdown(doc.body);const summary=[['colors',Object.keys(data.colors||{}).length],['typography',Object.keys(data.typography||{}).length],['rounded',Object.keys(data.rounded||{}).length],['spacing',Object.keys(data.spacing||{}).length],['components',Object.keys(data.components||{}).length],['markdown tables',tables.length]];document.getElementById('summary').innerHTML=summary.map(([label,count])=>'<span class="pill"><strong>'+count+'</strong>'+label+'</span>').join('');
+const doc=splitDocument(raw);const data=parseFrontmatter(doc.frontmatter);const tables=extractTables(doc.body);renderColorGroups(data.colors||{});renderGradientTokens(data.gradients||{});renderNestedObjects('typography-tokens',data.typography||{},'typography-count');document.getElementById('rounded-tokens').innerHTML=renderObjectTable(data.rounded||{});document.getElementById('rounded-count').textContent=Object.keys(data.rounded||{}).length+' tokens';document.getElementById('spacing-tokens').innerHTML=renderObjectTable(data.spacing||{});document.getElementById('spacing-count').textContent=Object.keys(data.spacing||{}).length+' tokens';renderNestedObjects('component-tokens',data.components||{},'component-count');document.getElementById('table-count').textContent=tables.length+' tables';document.getElementById('all-tables').innerHTML=tables.map((table,index)=>'<div><h3 class="group-title">Markdown table '+(index+1)+'</h3>'+renderTable(table.headers,table.rows)+'</div>').join('');document.getElementById('markdown-body').innerHTML=renderMarkdown(doc.body);const summary=[['colors',Object.keys(data.colors||{}).length],['gradients',Object.keys(data.gradients||{}).length],['typography',Object.keys(data.typography||{}).length],['rounded',Object.keys(data.rounded||{}).length],['spacing',Object.keys(data.spacing||{}).length],['components',Object.keys(data.components||{}).length],['markdown tables',tables.length]];document.getElementById('summary').innerHTML=summary.map(([label,count])=>'<span class="pill"><strong>'+count+'</strong>'+label+'</span>').join('');
 </script>
 </body>
 </html>
