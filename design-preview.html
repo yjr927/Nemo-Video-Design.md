@@ -6,36 +6,61 @@
   <title>NemoVideo DESIGN.md Preview</title>
   <style>
     :root {
-      --primary: #3369ff;
-      --primary-hover: #4c8cff;
-      --primary-soft: #f0f7ff;
-      --background: #f9fafb;
-      --foreground: #101828;
-      --surface: #ffffff;
-      --surface-muted: #f2f4f7;
-      --border: #eaecf0;
-      --input-border: #d0d5dd;
-      --text-secondary: #475467;
-      --text-tertiary: #667085;
-      --text-placeholder: #98a2b3;
-      --success: #12b76a;
-      --success-bg: #ecfdf3;
-      --warning: #f79009;
-      --warning-bg: #fffaeb;
-      --error: #f04438;
-      --error-bg: #fef3f2;
-      --info: #1776ff;
-      --info-bg: #f0f7ff;
-      --dark-background: #101828;
-      --dark-surface: #1d2939;
-      --dark-muted: #344054;
-      --dark-text: #fcfcfd;
-      --figma-primary: #165dff;
-      --figma-pressed: #0e42d2;
+      --brand-1: hsl(217 100% 60%);
+      --brand-2: hsl(217 100% 63%);
+      --brand-3: hsl(217 100% 65%);
+      --brand-4: hsl(217 100% 75%);
+      --brand-5: hsl(217 100% 87%);
+      --brand-6: hsl(217 100% 93%);
+      --brand-7: hsl(217 100% 97%);
+      --text-1: hsl(221 33% 11%);
+      --text-2: hsl(215 14% 34%);
+      --text-3: hsl(220 9% 46%);
+      --text-4: hsl(218 11% 65%);
+      --line-1: hsl(220 13% 93%);
+      --gray-1: hsl(220 14% 99%);
+      --gray-2: hsl(210 20% 98%);
+      --gray-3: hsl(220 14% 96%);
+      --gray-4: hsl(220 13% 93%);
+      --gray-5: hsl(216 12% 84%);
+      --gray-6: hsl(218 11% 65%);
+      --gray-7: hsl(220 9% 46%);
+      --gray-8: hsl(215 14% 34%);
+      --gray-9: hsl(217 19% 27%);
+      --gray-10: hsl(215 25% 17%);
+      --gray-11: hsl(221 33% 11%);
+      --info-1: hsl(217 100% 97%);
+      --info-5: hsl(217 100% 63%);
+      --info-6: hsl(213 100% 55%);
+      --success-2: hsl(145 80% 96%);
+      --success-7: hsl(154 82% 39%);
+      --success-9: hsl(160 96% 24%);
+      --warning-2: hsl(45 100% 96%);
+      --warning-7: hsl(33 94% 50%);
+      --warning-9: hsl(24 91% 37%);
+      --error-2: hsl(6 100% 97%);
+      --error-7: hsl(4 86% 58%);
+      --error-9: hsl(4 76% 40%);
+      --background: hsl(210 20% 98%);
+      --foreground: hsl(221 33% 11%);
+      --card: hsl(210 20% 98%);
+      --primary: hsl(217 100% 60%);
+      --secondary: hsl(220 14% 96%);
+      --accent: hsl(217 100% 93%);
+      --dark-brand-1: hsl(217 100% 65%);
+      --dark-background: hsl(220 17% 7%);
+      --dark-text-1: hsl(220 14% 96%);
+      --dark-text-2: hsl(216 12% 84%);
+      --dark-line-1: hsl(224 12% 18%);
+      --dark-gray-2: hsl(225 14% 11%);
+      --dark-gray-3: hsl(224 12% 18%);
+      --website-purple: #7145fe;
+      --website-brand1-6: rgb(22 93 255);
+      --website-logo: linear-gradient(90deg, #308dff, #38adff, #687cff, #6445ff, #ae62ff);
       --radius-sm: 4px;
       --radius-md: 6px;
       --radius-lg: 8px;
-      --shadow-card: 0 1px 3px rgba(16, 24, 40, .1), 0 1px 2px rgba(16, 24, 40, .06);
+      --shadow: 0 1px 3px rgb(16 24 40 / 10%), 0 1px 2px rgb(16 24 40 / 6%);
       color-scheme: light;
     }
 
@@ -51,7 +76,7 @@
       margin: 0;
       background: var(--background);
       color: var(--foreground);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
@@ -71,11 +96,10 @@
       position: sticky;
       top: 0;
       height: 100vh;
-      border-right: 1px solid var(--border);
-      background: rgba(255, 255, 255, .88);
-      backdrop-filter: blur(16px);
-      padding: 24px;
       overflow: auto;
+      border-right: 1px solid var(--line-1);
+      background: var(--gray-1);
+      padding: 24px;
     }
 
     .brand {
@@ -91,23 +115,22 @@
       height: 36px;
       place-items: center;
       border-radius: var(--radius-lg);
-      background: var(--primary);
-      color: #fff;
+      background: var(--gray-11);
+      color: var(--gray-1);
       font-family: Outfit, Inter, sans-serif;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
     }
 
     .brand strong {
       display: block;
-      font-size: 15px;
       line-height: 1.1;
     }
 
     .brand span {
       display: block;
       margin-top: 2px;
-      color: var(--text-tertiary);
+      color: var(--text-3);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 11px;
     }
@@ -119,70 +142,58 @@
 
     .nav a {
       border-radius: var(--radius-md);
-      color: var(--text-secondary);
+      color: var(--text-2);
       font-size: 13px;
       padding: 9px 10px;
     }
 
     .nav a:hover {
-      background: var(--surface-muted);
-      color: var(--foreground);
+      background: var(--gray-3);
+      color: var(--text-1);
     }
 
-    .sidebar-note {
+    .note {
       margin-top: 28px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line-1);
       border-radius: var(--radius-lg);
-      background: var(--surface);
+      background: var(--background);
       padding: 14px;
-      color: var(--text-secondary);
+      color: var(--text-2);
       font-size: 12px;
-    }
-
-    main {
-      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .hero {
-      border-bottom: 1px solid var(--border);
-      background:
-        radial-gradient(circle at 80% 0%, rgba(51, 105, 255, .12), transparent 34%),
-        linear-gradient(180deg, #fff 0%, var(--background) 100%);
-      padding: 64px clamp(24px, 6vw, 80px) 56px;
+      border-bottom: 1px solid var(--line-1);
+      background: linear-gradient(180deg, var(--gray-1) 0%, var(--background) 100%);
+      padding: 64px clamp(24px, 6vw, 80px) 52px;
     }
 
     .kicker {
-      color: var(--primary);
+      color: var(--brand-1);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
     h1 {
       max-width: 900px;
-      margin: 16px 0 18px;
-      font-size: clamp(42px, 7vw, 76px);
+      margin: 14px 0 16px;
+      font-size: clamp(38px, 7vw, 72px);
       font-weight: 800;
-      letter-spacing: -0.02em;
       line-height: 1.02;
     }
 
-    .serif {
-      font-family: "Bodoni 72", "Bodoni Moda", Didot, serif;
-      font-style: italic;
-      font-weight: 400;
-    }
-
     .hero p {
-      max-width: 760px;
+      max-width: 820px;
       margin: 0;
-      color: var(--text-secondary);
+      color: var(--text-2);
       font-size: 18px;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -191,24 +202,30 @@
 
     .button {
       display: inline-flex;
+      height: 40px;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
+      gap: 8px;
       border-radius: var(--radius-md);
       padding: 0 16px;
       font-size: 14px;
       font-weight: 500;
     }
 
-    .button.dark {
-      background: var(--foreground);
-      color: #fff;
+    .button.default {
+      background: var(--gray-11);
+      color: var(--gray-1);
     }
 
-    .button.soft {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--foreground);
+    .button.outline {
+      border: 1px solid var(--line-1);
+      background: var(--background);
+      color: var(--gray-11);
+    }
+
+    .button.secondary {
+      background: var(--secondary);
+      color: var(--text-1);
     }
 
     .content {
@@ -218,14 +235,14 @@
     }
 
     section {
-      scroll-margin-top: 28px;
+      scroll-margin-top: 24px;
     }
 
     .section {
-      border: 1px solid var(--border);
+      border: 1px solid var(--line-1);
       border-radius: var(--radius-lg);
-      background: var(--surface);
-      box-shadow: var(--shadow-card);
+      background: var(--card);
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
@@ -234,7 +251,7 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line-1);
       padding: 22px 24px;
     }
 
@@ -242,11 +259,10 @@
       margin: 0;
       font-size: 24px;
       font-weight: 650;
-      letter-spacing: -0.01em;
     }
 
-    .section-index {
-      color: var(--text-placeholder);
+    .index {
+      color: var(--text-4);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
     }
@@ -260,95 +276,33 @@
     }
 
     .section-body p {
-      color: var(--text-secondary);
+      color: var(--text-2);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .grid.two {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .grid.four {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .token-card {
-      border: 1px solid var(--border);
+    .token-card,
+    .mini-card {
+      border: 1px solid var(--line-1);
       border-radius: var(--radius-lg);
-      background: var(--surface);
+      background: var(--gray-1);
       overflow: hidden;
-    }
-
-    .swatch {
-      height: 84px;
-      border-bottom: 1px solid var(--border);
-      background: var(--swatch);
-    }
-
-    .swatch.dark-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .token-meta {
-      padding: 12px;
-    }
-
-    .token-name {
-      color: var(--foreground);
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    code,
-    .hex {
-      color: var(--text-tertiary);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-    }
-
-    .pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 220px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .theme-panel {
-      padding: 20px;
-    }
-
-    .theme-panel.light {
-      background: var(--background);
-    }
-
-    .theme-panel.night {
-      background: var(--dark-background);
-      color: var(--dark-text);
     }
 
     .mini-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
       padding: 16px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .night .mini-card {
-      border-color: var(--dark-muted);
-      background: var(--dark-surface);
-      color: var(--dark-text);
     }
 
     .mini-card strong {
@@ -358,59 +312,112 @@
     }
 
     .mini-card span {
-      color: var(--text-tertiary);
+      color: var(--text-3);
       font-size: 13px;
     }
 
-    .night .mini-card span {
-      color: #d0d5dd;
+    .swatch {
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line-1);
+      background: var(--swatch);
+      color: var(--label, var(--text-1));
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .type-scale {
+    .meta {
+      padding: 12px;
+    }
+
+    .token-name {
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    code,
+    .value {
+      color: var(--text-3);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .stack {
       display: grid;
       gap: 14px;
     }
 
-    .type-row {
+    .theme-pair {
       display: grid;
-      grid-template-columns: 140px 1fr 160px;
-      align-items: baseline;
-      gap: 16px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 14px;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line-1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
     }
 
-    .type-row:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
+    .theme-panel {
+      min-height: 260px;
+      padding: 20px;
     }
 
-    .muted {
-      color: var(--text-tertiary);
+    .theme-panel.light {
+      background: var(--background);
+      color: var(--text-1);
+    }
+
+    .theme-panel.dark {
+      background: var(--dark-background);
+      color: var(--dark-text-1);
+    }
+
+    .demo-card {
+      border: 1px solid var(--line-1);
+      border-radius: var(--radius-lg);
+      background: var(--background);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .dark .demo-card {
+      border-color: var(--dark-line-1);
+      background: var(--dark-gray-2);
+      color: var(--dark-text-1);
+    }
+
+    .demo-card p {
+      margin: 6px 0 0;
+      color: var(--text-3);
       font-size: 13px;
     }
 
-    .component-strip {
+    .dark .demo-card p {
+      color: var(--dark-text-2);
+    }
+
+    .components-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line-1);
       border-radius: var(--radius-lg);
-      background: var(--surface-muted);
+      background: var(--gray-3);
       padding: 16px;
     }
 
-    .input-demo {
+    .input {
       height: 36px;
       min-width: 220px;
-      border: 1px solid var(--input-border);
+      border: 1px solid var(--line-1);
       border-radius: var(--radius-md);
-      background: var(--surface);
-      color: var(--text-placeholder);
-      padding: 8px 12px;
+      background: var(--background);
+      color: var(--text-3);
+      padding: 4px 12px;
       font-size: 14px;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
+      box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
     }
 
     .badge {
@@ -418,85 +425,53 @@
       align-items: center;
       min-height: 24px;
       border-radius: var(--radius-md);
-      padding: 0 8px;
+      padding: 0 10px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 650;
     }
 
-    .badge.info {
-      background: var(--info-bg);
-      color: var(--info);
+    .badge.default {
+      background: var(--gray-11);
+      color: #fff;
     }
 
     .badge.success {
-      background: var(--success-bg);
-      color: #027a48;
+      background: var(--success-7);
+      color: var(--gray-1);
     }
 
     .badge.warning {
-      background: var(--warning-bg);
-      color: #b54708;
+      background: var(--warning-7);
+      color: var(--gray-1);
     }
 
     .badge.error {
-      background: var(--error-bg);
-      color: #b42318;
+      background: var(--error-7);
+      color: var(--gray-1);
     }
 
-    .checklist {
+    .badge.info {
+      background: var(--info-5);
+      color: var(--gray-1);
+    }
+
+    .website-strip {
       display: grid;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
     }
 
-    .checklist li {
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 10px;
-      color: var(--text-secondary);
-      font-size: 14px;
+    .gradient {
+      background: var(--website-logo);
     }
 
-    .checklist li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      margin-top: 7px;
-      border-radius: 999px;
-      background: var(--primary);
-    }
-
-    .markdown-frame {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: #0b1220;
-      color: #d0d5dd;
-      overflow: hidden;
-    }
-
-    .markdown-frame header {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-      padding: 10px 14px;
-      color: #98a2b3;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-    }
-
-    pre {
-      margin: 0;
-      overflow: auto;
-      padding: 16px;
-      font-size: 12px;
-      line-height: 1.55;
-      white-space: pre-wrap;
-    }
-
-    @media (max-width: 960px) {
-      .shell {
+    @media (max-width: 980px) {
+      .shell,
+      .grid,
+      .grid.three,
+      .grid.two,
+      .theme-pair,
+      .website-strip {
         grid-template-columns: 1fr;
       }
 
@@ -504,23 +479,7 @@
         position: static;
         height: auto;
         border-right: 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .grid,
-      .grid.two,
-      .grid.four,
-      .pair {
-        grid-template-columns: 1fr;
-      }
-
-      .type-row {
-        grid-template-columns: 1fr;
-        gap: 6px;
+        border-bottom: 1px solid var(--line-1);
       }
     }
   </style>
@@ -532,297 +491,171 @@
         <div class="mark">N</div>
         <div>
           <strong>NemoVideo</strong>
-          <span>DESIGN.md preview</span>
+          <span>code token preview</span>
         </div>
       </div>
       <nav class="nav" aria-label="Design sections">
-        <a href="#overview">Overview</a>
-        <a href="#colors">Colors</a>
-        <a href="#typography">Typography</a>
-        <a href="#layout">Layout</a>
-        <a href="#elevation">Elevation & Depth</a>
-        <a href="#shapes">Shapes</a>
+        <a href="#source">Source</a>
+        <a href="#brand">Brand</a>
+        <a href="#gray">Gray</a>
+        <a href="#status">Status</a>
+        <a href="#themes">Themes</a>
         <a href="#components">Components</a>
-        <a href="#rules">Do's and Don'ts</a>
-        <a href="#source">Markdown Source</a>
+        <a href="#website">Website Layer</a>
       </nav>
-      <div class="sidebar-note">
-        This HTML is a visual companion for <code>design.md</code>. The Markdown file remains the source of truth.
+      <div class="note">
+        Visual companion for <code>design.md</code>. Values are copied from <code>packages/design/src/styles/globals.css</code> and <code>packages/design/tailwind.config.js</code>.
       </div>
     </aside>
 
     <main>
       <header class="hero">
-        <div class="kicker">version alpha / ship tokens win</div>
-        <h1>Chat Your Way <span class="serif">to Virality</span></h1>
-        <p>NemoVideo is an AI video-editing agent design system: confident, restrained, action-first, and built around semantic tokens for light and dark mode.</p>
-        <div class="hero-actions">
-          <a class="button dark" href="design.md">Open design.md</a>
-          <a class="button soft" href="#colors">View tokens</a>
+        <div class="kicker">NemoVideo DESIGN.md / codebase matched</div>
+        <h1>Exact product tokens from the current Nemo Video codebase.</h1>
+        <p>The product UI source of truth is <code>@nemo/design</code>. Primary brand is <code>--brand-1: 217 100% 60%</code>, documented in code as <code>#3369FF</code>.</p>
+        <div class="actions">
+          <a class="button default" href="design.md">Open design.md</a>
+          <a class="button outline" href="#components">View components</a>
         </div>
       </header>
 
       <div class="content">
-        <section id="overview" class="section">
+        <section id="source" class="section">
           <div class="section-header">
-            <h2>Overview</h2>
-            <span class="section-index">01</span>
+            <h2>Source Priority</h2>
+            <span class="index">01</span>
           </div>
           <div class="section-body">
-            <p>NemoVideo should feel like a creator workbench, not a loud marketing template. The UI uses one meaningful blue, neutral surfaces, precise borders, and practical spacing.</p>
             <div class="grid three">
               <div class="mini-card">
-                <strong>Personality</strong>
-                <span>Confident, effortless, action-first, creator-to-creator.</span>
+                <strong>Token Source</strong>
+                <span><code>packages/design/src/styles/globals.css</code></span>
               </div>
               <div class="mini-card">
-                <strong>Source Priority</strong>
-                <span>Production code tokens override older Figma values.</span>
+                <strong>Tailwind Mapping</strong>
+                <span><code>packages/design/tailwind.config.js</code></span>
               </div>
               <div class="mini-card">
-                <strong>Signature Copy</strong>
-                <span>Chat Your Way to Virality / 对话即爆款</span>
+                <strong>Component Source</strong>
+                <span><code>packages/design/src/components/ui/*</code></span>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="colors" class="section">
+        <section id="brand" class="section">
           <div class="section-header">
-            <h2>Colors</h2>
-            <span class="section-index">02</span>
+            <h2>Product Brand Ramp</h2>
+            <span class="index">02</span>
           </div>
           <div class="section-body">
-            <p>Production primary is <code>#3369FF</code>. Figma primary <code>#165DFF</code> is retained as historical design intent and Arco state mapping.</p>
-            <div class="grid four">
-              <div class="token-card">
-                <div class="swatch dark-text" style="--swatch: var(--primary)">Primary</div>
-                <div class="token-meta"><div class="token-name">primary</div><div class="hex">#3369FF</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch" style="--swatch: var(--primary-soft)"></div>
-                <div class="token-meta"><div class="token-name">primary-soft</div><div class="hex">#F0F7FF</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch dark-text" style="--swatch: var(--figma-primary)">Figma</div>
-                <div class="token-meta"><div class="token-name">figma-primary</div><div class="hex">#165DFF</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch dark-text" style="--swatch: var(--figma-pressed)">Pressed</div>
-                <div class="token-meta"><div class="token-name">figma-pressed</div><div class="hex">#0E42D2</div></div>
-              </div>
+            <p>These are the exact HSL channel values in <code>:root</code>. The preview renders the same values through CSS, not approximate replacements.</p>
+            <div class="grid">
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-1); --label: #fff">brand-1</div><div class="meta"><div class="token-name">#3369FF</div><div class="value">217 100% 60%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-2); --label: #fff">brand-2</div><div class="meta"><div class="token-name">#4080FF</div><div class="value">217 100% 63%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-3); --label: #fff">brand-3</div><div class="meta"><div class="token-name">#4C8CFF</div><div class="value">217 100% 65%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-4)">brand-4</div><div class="meta"><div class="token-name">#80AAFF</div><div class="value">217 100% 75%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-5)">brand-5</div><div class="meta"><div class="token-name">#BDD6FF</div><div class="value">217 100% 87%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-6)">brand-6</div><div class="meta"><div class="token-name">#D9E8FF</div><div class="value">217 100% 93%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--brand-7)">brand-7</div><div class="meta"><div class="token-name">#F0F7FF</div><div class="value">217 100% 97%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--background)">background</div><div class="meta"><div class="token-name">#F9FAFB</div><div class="value">210 20% 98%</div></div></div>
             </div>
+          </div>
+        </section>
 
-            <div style="height: 18px"></div>
-
-            <div class="grid four">
-              <div class="token-card">
-                <div class="swatch" style="--swatch: var(--background)"></div>
-                <div class="token-meta"><div class="token-name">background</div><div class="hex">#F9FAFB</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch" style="--swatch: var(--surface)"></div>
-                <div class="token-meta"><div class="token-name">surface</div><div class="hex">#FFFFFF</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch" style="--swatch: var(--border)"></div>
-                <div class="token-meta"><div class="token-name">border</div><div class="hex">#EAECF0</div></div>
-              </div>
-              <div class="token-card">
-                <div class="swatch dark-text" style="--swatch: var(--foreground)">Text</div>
-                <div class="token-meta"><div class="token-name">foreground</div><div class="hex">#101828</div></div>
-              </div>
+        <section id="gray" class="section">
+          <div class="section-header">
+            <h2>Text, Line, Gray</h2>
+            <span class="index">03</span>
+          </div>
+          <div class="section-body">
+            <div class="grid">
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-1)">gray-1</div><div class="meta"><div class="token-name">#FCFCFD</div><div class="value">220 14% 99%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-2)">gray-2</div><div class="meta"><div class="token-name">#F9FAFB</div><div class="value">210 20% 98%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-3)">gray-3</div><div class="meta"><div class="token-name">#F2F4F7</div><div class="value">220 14% 96%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-4)">line-1</div><div class="meta"><div class="token-name">#EAECF0</div><div class="value">220 13% 93%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-6)">text-4</div><div class="meta"><div class="token-name">#98A2B3</div><div class="value">218 11% 65%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-7); --label: #fff">text-3</div><div class="meta"><div class="token-name">#667085</div><div class="value">220 9% 46%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-8); --label: #fff">text-2</div><div class="meta"><div class="token-name">#475467</div><div class="value">215 14% 34%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--gray-11); --label: #fff">text-1</div><div class="meta"><div class="token-name">#101828</div><div class="value">221 33% 11%</div></div></div>
             </div>
+          </div>
+        </section>
 
-            <div style="height: 18px"></div>
+        <section id="status" class="section">
+          <div class="section-header">
+            <h2>Status Defaults</h2>
+            <span class="index">04</span>
+          </div>
+          <div class="section-body">
+            <p>Tailwind defaults map <code>success</code> to <code>success-7</code>, <code>warning</code> to <code>warning-7</code>, <code>error/destructive</code> to <code>error-7</code>, and <code>info</code> to <code>info-5</code>.</p>
+            <div class="grid">
+              <div class="token-card"><div class="swatch" style="--swatch: var(--success-2)">success-2</div><div class="meta"><div class="token-name">#ECFDF3</div><div class="value">145 80% 96%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--success-7); --label: #fff">success-7</div><div class="meta"><div class="token-name">#12B76A</div><div class="value">154 82% 39%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--warning-7); --label: #101828">warning-7</div><div class="meta"><div class="token-name">#F79009</div><div class="value">33 94% 50%</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--error-7); --label: #fff">error-7</div><div class="meta"><div class="token-name">#F04438</div><div class="value">4 86% 58%</div></div></div>
+            </div>
+          </div>
+        </section>
 
-            <div class="pair">
+        <section id="themes" class="section">
+          <div class="section-header">
+            <h2>Light And Dark</h2>
+            <span class="index">05</span>
+          </div>
+          <div class="section-body">
+            <p>Dark mode is class based. <code>ThemeProvider</code> supports <code>light</code>, <code>dark</code>, and <code>auto</code>, saved under <code>nemo-theme</code>.</p>
+            <div class="theme-pair">
               <div class="theme-panel light">
-                <div class="mini-card">
-                  <strong>Light mode</strong>
-                  <span>Background #F9FAFB, surface #FFFFFF, text #101828, border #EAECF0.</span>
+                <div class="demo-card">
+                  <strong>Light product surface</strong>
+                  <p>background: 210 20% 98%, text-1: 221 33% 11%, line-1: 220 13% 93%</p>
                 </div>
               </div>
-              <div class="theme-panel night">
-                <div class="mini-card">
-                  <strong>Dark mode</strong>
-                  <span>Background #101828, surface #1D2939, text #FCFCFD, border #344054.</span>
+              <div class="theme-panel dark">
+                <div class="demo-card">
+                  <strong>Dark product surface</strong>
+                  <p>background: 220 17% 7%, text-1: 220 14% 96%, line-1: 224 12% 18%</p>
                 </div>
               </div>
-            </div>
-
-            <div style="height: 18px"></div>
-
-            <div class="component-strip">
-              <span class="badge success">Success</span>
-              <span class="badge warning">Warning</span>
-              <span class="badge error">Error</span>
-              <span class="badge info">Info</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="typography" class="section">
-          <div class="section-header">
-            <h2>Typography</h2>
-            <span class="section-index">03</span>
-          </div>
-          <div class="section-body">
-            <div class="type-scale">
-              <div class="type-row">
-                <div class="muted">headline-xl</div>
-                <div style="font-size: 48px; font-weight: 800; line-height: 1.05; letter-spacing: -.02em;">NemoVideo</div>
-                <code>48 / 800</code>
-              </div>
-              <div class="type-row">
-                <div class="muted">headline-lg</div>
-                <div style="font-size: 36px; font-weight: 800; line-height: 1.12;">Design System</div>
-                <code>36 / 800</code>
-              </div>
-              <div class="type-row">
-                <div class="muted">title-md</div>
-                <div style="font-size: 20px; font-weight: 600;">Workbench panel title</div>
-                <code>20 / 600</code>
-              </div>
-              <div class="type-row">
-                <div class="muted">body-md</div>
-                <div style="font-size: 16px;">Readable product copy for dense editing workflows.</div>
-                <code>16 / 400</code>
-              </div>
-              <div class="type-row">
-                <div class="muted">mono-label</div>
-                <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em;">TOKEN / STATUS / METADATA</div>
-                <code>12 / 500</code>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="layout" class="section">
-          <div class="section-header">
-            <h2>Layout</h2>
-            <span class="section-index">04</span>
-          </div>
-          <div class="section-body">
-            <p>The product uses a VSCode-style workbench: left navigation, central task panels, and a fixed right AI chat panel.</p>
-            <div class="grid three">
-              <div class="mini-card"><strong>WorkspaceLayout</strong><span>Home routes: viral, uploaded, generated, subscription.</span></div>
-              <div class="mini-card"><strong>TaskLayout</strong><span>Task header, icon rail, resizable panels, AI chat.</span></div>
-              <div class="mini-card"><strong>AI chat width</strong><span>Fixed at 336px in the task workspace.</span></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="elevation" class="section">
-          <div class="section-header">
-            <h2>Elevation & Depth</h2>
-            <span class="section-index">05</span>
-          </div>
-          <div class="section-body">
-            <div class="grid two">
-              <div class="mini-card"><strong>Cards</strong><span>Quiet Untitled-style shadow plus 1px border.</span></div>
-              <div class="mini-card"><strong>Focus</strong><span>Visible brand ring: #3369FF in light, #80AAFF in dark.</span></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="shapes" class="section">
-          <div class="section-header">
-            <h2>Shapes</h2>
-            <span class="section-index">06</span>
-          </div>
-          <div class="section-body">
-            <div class="grid four">
-              <div class="mini-card" style="border-radius: 4px"><strong>sm</strong><span>4px</span></div>
-              <div class="mini-card" style="border-radius: 6px"><strong>md</strong><span>6px buttons and inputs</span></div>
-              <div class="mini-card" style="border-radius: 8px"><strong>lg</strong><span>8px cards and panels</span></div>
-              <div class="mini-card" style="border-radius: 999px"><strong>full</strong><span>Pills and avatars</span></div>
             </div>
           </div>
         </section>
 
         <section id="components" class="section">
           <div class="section-header">
-            <h2>Components</h2>
-            <span class="section-index">07</span>
+            <h2>Component Mapping</h2>
+            <span class="index">06</span>
           </div>
-          <div class="section-body">
-            <p>Build with <code>@nemo/design</code>. Figma <code>oc-*</code> components remain state and anatomy references.</p>
-            <div class="component-strip">
-              <button class="button dark">Default</button>
-              <button class="button" style="background: var(--primary); color: #fff;">Primary</button>
-              <button class="button soft">Secondary</button>
-              <div class="input-demo">Placeholder text</div>
-              <span class="badge info">Info badge</span>
+          <div class="section-body stack">
+            <div class="components-row">
+              <button class="button default">Default</button>
+              <button class="button outline">Outline</button>
+              <button class="button secondary">Secondary</button>
+              <div class="input">Input placeholder</div>
             </div>
+            <div class="components-row">
+              <span class="badge default">Default badge</span>
+              <span class="badge success">Success</span>
+              <span class="badge warning">Warning</span>
+              <span class="badge error">Error</span>
+              <span class="badge info">Info</span>
+            </div>
+            <p><code>Button default</code> is <code>bg-gray-11 text-gray-1</code>, not brand blue. Brand color is used by semantic <code>primary</code>, focus rings, accents, and product-specific surfaces.</p>
           </div>
         </section>
 
-        <section id="rules" class="section">
+        <section id="website" class="section">
           <div class="section-header">
-            <h2>Do's and Don'ts</h2>
-            <span class="section-index">08</span>
+            <h2>Website Layer</h2>
+            <span class="index">07</span>
           </div>
           <div class="section-body">
-            <div class="grid two">
-              <div>
-                <h3>Do</h3>
-                <ul class="checklist">
-                  <li>Use ship/code tokens as the production source of truth.</li>
-                  <li>Keep brand blue scarce and meaningful.</li>
-                  <li>Support light and dark mode through semantic tokens.</li>
-                  <li>Use Figma values for state intent and anatomy.</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Don't</h3>
-                <ul class="checklist">
-                  <li>Replace #3369FF with Figma #165DFF without migration.</li>
-                  <li>Use decorative gradients as UI component colors.</li>
-                  <li>Hardcode hex values when tokens exist.</li>
-                  <li>Invent component variants like primaryBlue.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="source" class="section">
-          <div class="section-header">
-            <h2>Markdown Source</h2>
-            <span class="section-index">09</span>
-          </div>
-          <div class="section-body">
-            <div class="markdown-frame">
-              <header>
-                <span>design.md excerpt</span>
-                <span>Google DESIGN.md format</span>
-              </header>
-              <pre>---
-version: alpha
-name: NemoVideo
-description: AI video-editing agent design system.
-colors:
-  primary: "#3369FF"
-  figma-primary: "#165DFF"
-typography:
-  headline-xl:
-    fontFamily: Inter
-    fontSize: 48px
-rounded:
-  md: 6px
-spacing:
-  base: 4px
-components:
-  button-default:
-    backgroundColor: "{colors.foreground}"
----
-
-## Overview
-NemoVideo is an AI video-editing agent...
-
-## Colors
-The shipped palette uses #3369FF as the production primary.</pre>
+            <p>The website imports product tokens, then adds marketing-specific values. These are documented separately so they do not overwrite <code>@nemo/design</code>.</p>
+            <div class="website-strip">
+              <div class="token-card"><div class="swatch" style="--swatch: var(--website-brand1-6); --label: #fff">brand1-6</div><div class="meta"><div class="token-name">rgb(22 93 255)</div><div class="value">website RGB layer</div></div></div>
+              <div class="token-card"><div class="swatch" style="--swatch: var(--website-purple); --label: #fff">purple</div><div class="meta"><div class="token-name">#7145FE</div><div class="value">marketing CTA/blog</div></div></div>
+              <div class="token-card"><div class="swatch gradient" style="--label: #fff">logo</div><div class="meta"><div class="token-name">#308DFF to #AE62FF</div><div class="value">website logo gradient</div></div></div>
             </div>
           </div>
         </section>

@@ -10,9 +10,9 @@ This repository contains a machine-readable and human-readable design-system ref
 
 The design system documents:
 
-- Production design tokens for colors, typography, spacing, radius, and components.
-- Light mode and dark mode semantic color rules.
-- Figma reference colors and component intent from the original design layer.
+- Production design tokens copied from the current Nemo Video codebase.
+- Light mode and dark mode semantic color rules from `@nemo/design`.
+- Website-layer colors documented separately from the product UI palette.
 - A static HTML preview for quickly reviewing the visual system in a browser.
 
 ### Files
@@ -23,11 +23,17 @@ The design system documents:
 
 ### Design Source Priority
 
-The production/code layer is the source of truth. Figma values are preserved as reference for original design intent, component anatomy, and state mapping.
+The production/code layer is the source of truth. The current normative files are:
 
-- Production primary: `#3369FF`
-- Figma reference primary: `#165DFF`
-- Dark mode: semantic token switching under `.dark`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/styles/globals.css`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/tailwind.config.js`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/components/ui/*`
+
+Important color rules:
+
+- Product primary: `--brand-1: 217 100% 60%`, documented in code as `#3369FF`.
+- Dark mode: semantic token switching under `.dark`.
+- Website marketing colors such as `#7145FE` and `brand1-*` are separate website-layer tokens, not replacements for `@nemo/design`.
 
 ### Preview
 
@@ -41,7 +47,7 @@ The file follows the Google `DESIGN.md` structure:
 npx -y @google/design.md lint design.md
 ```
 
-The current document validates with zero structural errors. Some orphan-token warnings are expected because the file intentionally includes a complete color palette, including reference tokens that are not directly attached to component examples.
+The current document validates with zero structural errors. Some warnings are expected because the file intentionally includes complete color ramps and mirrors the current component contrast choices in code.
 
 ---
 
@@ -51,9 +57,9 @@ The current document validates with zero structural errors. Some orphan-token wa
 
 这份设计系统包含：
 
-- 生产环境使用的颜色、字体、间距、圆角和组件 token。
-- 白天模式和黑夜模式的语义色规范。
-- 从原始 Figma 设计层提取的参考色、组件结构和状态意图。
+- 从当前 Nemo Video codebase 读取的生产环境 token。
+- `@nemo/design` 中白天模式和黑夜模式的语义色规范。
+- 单独记录 website layer 的营销色，不把它和产品 UI 主色混在一起。
 - 一个可直接在浏览器打开的静态 HTML 预览页。
 
 ### 文件说明
@@ -64,11 +70,17 @@ The current document validates with zero structural errors. Some orphan-token wa
 
 ### 设计优先级
 
-上线实现以代码/生产 token 为准。Figma 数值用于保留原始设计意图、组件结构和状态映射，不直接覆盖生产 token。
+上线实现以代码/生产 token 为准。当前规范的来源文件是：
 
-- 生产主色：`#3369FF`
-- Figma 参考主色：`#165DFF`
-- 黑夜模式：通过 `.dark` 下的语义 token 切换实现
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/styles/globals.css`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/tailwind.config.js`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/components/ui/*`
+
+重要颜色规则：
+
+- 产品主色：`--brand-1: 217 100% 60%`，代码注释为 `#3369FF`。
+- 黑夜模式：通过 `.dark` 下的语义 token 切换实现。
+- Website 营销色，例如 `#7145FE` 和 `brand1-*`，是 website layer，不覆盖 `@nemo/design` 产品 UI。
 
 ### 如何预览
 
@@ -82,4 +94,4 @@ The current document validates with zero structural errors. Some orphan-token wa
 npx -y @google/design.md lint design.md
 ```
 
-当前文档没有结构错误。部分未被组件直接引用的 token 会产生 warning，这是因为文档保留了完整色板和 Figma 参考 token，属于预期情况。
+当前文档没有结构错误。部分 token 未被组件直接引用、以及个别状态按钮对比度 warning 属于预期情况，因为文档完整保留了代码里的色阶和当前组件实现。

@@ -1,358 +1,483 @@
 ---
 version: alpha
 name: NemoVideo
-description: AI video-editing agent design system. Ship/code tokens are normative; Figma tokens document original design intent and state mapping.
+description: Exact design tokens from the current Nemo Video codebase. Normative source is packages/design/src/styles/globals.css and packages/design/tailwind.config.js.
 colors:
-  primary: "#3369FF"
-  primary-hover: "#4C8CFF"
-  primary-pressed: "#4080FF"
-  primary-soft: "#F0F7FF"
-  primary-disabled: "#D9E8FF"
-  primary-focus-dark: "#80AAFF"
+  brand-1: "hsl(217 100% 60%)"
+  brand-2: "hsl(217 100% 63%)"
+  brand-3: "hsl(217 100% 65%)"
+  brand-4: "hsl(217 100% 75%)"
+  brand-5: "hsl(217 100% 87%)"
+  brand-6: "hsl(217 100% 93%)"
+  brand-7: "hsl(217 100% 97%)"
 
-  background: "#F9FAFB"
-  foreground: "#101828"
-  surface: "#FFFFFF"
-  surface-muted: "#F2F4F7"
-  border: "#EAECF0"
-  input-border: "#D0D5DD"
-  text-primary: "#101828"
-  text-secondary: "#475467"
-  text-tertiary: "#667085"
-  text-placeholder: "#98A2B3"
-  inverse-text: "#FFFFFF"
+  text-1: "hsl(221 33% 11%)"
+  text-2: "hsl(215 14% 34%)"
+  text-3: "hsl(220 9% 46%)"
+  text-4: "hsl(218 11% 65%)"
+  line-1: "hsl(220 13% 93%)"
+  mask-1: "hsl(0 0% 0% / 0.4)"
 
-  dark-background: "#101828"
-  dark-foreground: "#FCFCFD"
-  dark-surface: "#1D2939"
-  dark-surface-muted: "#344054"
-  dark-border: "#344054"
-  dark-input-border: "#475467"
-  dark-text-primary: "#FCFCFD"
-  dark-text-secondary: "#EAECF0"
-  dark-text-tertiary: "#D0D5DD"
-  dark-text-placeholder: "#98A2B3"
+  gray-1: "hsl(220 14% 99%)"
+  gray-2: "hsl(210 20% 98%)"
+  gray-3: "hsl(220 14% 96%)"
+  gray-4: "hsl(220 13% 93%)"
+  gray-5: "hsl(216 12% 84%)"
+  gray-6: "hsl(218 11% 65%)"
+  gray-7: "hsl(220 9% 46%)"
+  gray-8: "hsl(215 14% 34%)"
+  gray-9: "hsl(217 19% 27%)"
+  gray-10: "hsl(215 25% 17%)"
+  gray-11: "hsl(221 33% 11%)"
 
-  success: "#12B76A"
-  success-bg: "#ECFDF3"
-  success-fg: "#027A48"
-  warning: "#F79009"
-  warning-bg: "#FFFAEB"
-  warning-fg: "#B54708"
-  error: "#F04438"
-  error-bg: "#FEF3F2"
-  error-fg: "#B42318"
-  info: "#1776FF"
-  info-bg: "#F0F7FF"
-  info-fg: "#175CD3"
+  info-1: "hsl(217 100% 97%)"
+  info-2: "hsl(217 100% 87%)"
+  info-3: "hsl(217 100% 75%)"
+  info-4: "hsl(217 100% 65%)"
+  info-5: "hsl(217 100% 63%)"
+  info-6: "hsl(213 100% 55%)"
 
-  figma-primary: "#165DFF"
-  figma-primary-hover: "#4080FF"
-  figma-primary-pressed: "#0E42D2"
-  figma-primary-soft: "#E8F3FF"
-  figma-gray-1: "#FFFFFF"
-  figma-gray-3: "#F2F3F7"
-  figma-gray-5: "#E5E6EC"
-  figma-gray-8: "#B8BAC4"
-  figma-gray-9: "#868B9C"
-  figma-gray-10: "#4E5469"
-  figma-gray-11: "#13141D"
+  success-1: "hsl(140 60% 98%)"
+  success-2: "hsl(145 80% 96%)"
+  success-3: "hsl(141 79% 90%)"
+  success-4: "hsl(145 75% 81%)"
+  success-5: "hsl(145 65% 67%)"
+  success-6: "hsl(152 69% 52%)"
+  success-7: "hsl(154 82% 39%)"
+  success-8: "hsl(158 96% 30%)"
+  success-9: "hsl(160 96% 24%)"
+  success-10: "hsl(155 90% 20%)"
+  success-11: "hsl(153 88% 17%)"
+
+  warning-1: "hsl(45 100% 98%)"
+  warning-2: "hsl(45 100% 96%)"
+  warning-3: "hsl(43 96% 89%)"
+  warning-4: "hsl(43 98% 77%)"
+  warning-5: "hsl(40 99% 65%)"
+  warning-6: "hsl(36 98% 56%)"
+  warning-7: "hsl(33 94% 50%)"
+  warning-8: "hsl(28 96% 44%)"
+  warning-9: "hsl(24 91% 37%)"
+  warning-10: "hsl(21 84% 31%)"
+  warning-11: "hsl(18 80% 27%)"
+
+  error-1: "hsl(10 100% 99%)"
+  error-2: "hsl(6 100% 97%)"
+  error-3: "hsl(4 100% 94%)"
+  error-4: "hsl(4 93% 89%)"
+  error-5: "hsl(4 89% 80%)"
+  error-6: "hsl(4 92% 69%)"
+  error-7: "hsl(4 86% 58%)"
+  error-8: "hsl(4 74% 49%)"
+  error-9: "hsl(4 76% 40%)"
+  error-10: "hsl(4 68% 33%)"
+  error-11: "hsl(4 64% 29%)"
+
+  fill-1: "hsl(217 100% 60%)"
+  fill-2: "hsl(220 14% 96%)"
+  background: "hsl(210 20% 98%)"
+  foreground: "{colors.text-1}"
+  border: "{colors.line-1}"
+  input: "{colors.line-1}"
+  ring: "{colors.brand-1}"
+  card: "{colors.background}"
+  card-foreground: "{colors.text-1}"
+  popover: "{colors.background}"
+  popover-foreground: "{colors.text-1}"
+  primary: "{colors.brand-1}"
+  primary-foreground: "{colors.gray-1}"
+  secondary: "{colors.gray-3}"
+  secondary-foreground: "{colors.text-1}"
+  destructive: "{colors.error-7}"
+  destructive-foreground: "{colors.gray-1}"
+  muted: "{colors.gray-2}"
+  muted-foreground: "{colors.text-3}"
+  accent: "{colors.brand-6}"
+  accent-foreground: "{colors.brand-1}"
+
+  dark-brand-1: "hsl(217 100% 65%)"
+  dark-brand-2: "hsl(217 100% 68%)"
+  dark-brand-3: "hsl(217 100% 70%)"
+  dark-brand-4: "hsl(217 100% 80%)"
+  dark-brand-5: "hsl(217 100% 90%)"
+  dark-brand-6: "hsl(217 100% 95%)"
+  dark-brand-7: "hsl(217 100% 98%)"
+  dark-text-1: "hsl(220 14% 96%)"
+  dark-text-2: "hsl(216 12% 84%)"
+  dark-text-3: "hsl(218 11% 65%)"
+  dark-text-4: "hsl(224 10% 45%)"
+  dark-line-1: "hsl(224 12% 18%)"
+  dark-mask-1: "hsl(0 0% 0% / 0.7)"
+  dark-gray-1: "hsl(220 17% 7%)"
+  dark-gray-2: "hsl(225 14% 11%)"
+  dark-gray-3: "hsl(224 12% 18%)"
+  dark-gray-4: "hsl(222 10% 32%)"
+  dark-gray-5: "hsl(224 10% 45%)"
+  dark-gray-6: "hsl(218 11% 65%)"
+  dark-gray-7: "hsl(216 12% 84%)"
+  dark-gray-8: "hsl(220 13% 93%)"
+  dark-gray-9: "hsl(220 14% 96%)"
+  dark-gray-10: "hsl(210 20% 98%)"
+  dark-gray-11: "hsl(220 14% 99%)"
+  dark-info-1: "hsl(217 100% 98%)"
+  dark-info-2: "hsl(217 100% 90%)"
+  dark-info-3: "hsl(217 100% 80%)"
+  dark-info-4: "hsl(217 100% 70%)"
+  dark-info-5: "hsl(217 100% 68%)"
+  dark-info-6: "hsl(213 100% 60%)"
+  dark-success-1: "hsl(153 88% 20%)"
+  dark-success-2: "hsl(155 90% 23%)"
+  dark-success-3: "hsl(160 96% 27%)"
+  dark-success-4: "hsl(158 96% 33%)"
+  dark-success-5: "hsl(154 82% 42%)"
+  dark-success-6: "hsl(152 69% 55%)"
+  dark-success-7: "hsl(145 65% 70%)"
+  dark-success-8: "hsl(145 75% 84%)"
+  dark-success-9: "hsl(141 79% 92%)"
+  dark-success-10: "hsl(145 80% 97%)"
+  dark-success-11: "hsl(140 60% 99%)"
+  dark-warning-1: "hsl(18 80% 30%)"
+  dark-warning-2: "hsl(21 84% 34%)"
+  dark-warning-3: "hsl(24 91% 40%)"
+  dark-warning-4: "hsl(28 96% 47%)"
+  dark-warning-5: "hsl(33 94% 53%)"
+  dark-warning-6: "hsl(36 98% 59%)"
+  dark-warning-7: "hsl(40 99% 68%)"
+  dark-warning-8: "hsl(43 98% 80%)"
+  dark-warning-9: "hsl(43 96% 91%)"
+  dark-warning-10: "hsl(45 100% 97%)"
+  dark-warning-11: "hsl(45 100% 99%)"
+  dark-error-1: "hsl(4 64% 32%)"
+  dark-error-2: "hsl(4 68% 36%)"
+  dark-error-3: "hsl(4 76% 43%)"
+  dark-error-4: "hsl(4 74% 52%)"
+  dark-error-5: "hsl(4 86% 61%)"
+  dark-error-6: "hsl(4 92% 72%)"
+  dark-error-7: "hsl(4 89% 83%)"
+  dark-error-8: "hsl(4 93% 91%)"
+  dark-error-9: "hsl(4 100% 95%)"
+  dark-error-10: "hsl(6 100% 98%)"
+  dark-error-11: "hsl(10 100% 99%)"
+  dark-fill-1: "hsl(217 100% 65%)"
+  dark-fill-2: "hsl(224 12% 18%)"
+  dark-background: "hsl(220 17% 7%)"
+
+  website-brand1-1: "rgb(232 243 255)"
+  website-brand1-2: "rgb(190 218 255)"
+  website-brand1-3: "rgb(148 191 255)"
+  website-brand1-4: "rgb(106 161 255)"
+  website-brand1-5: "rgb(64 128 255)"
+  website-brand1-6: "rgb(22 93 255)"
+  website-brand1-7: "rgb(14 66 210)"
+  website-purple: "#7145FE"
+  website-logo-blue: "#308DFF"
+  website-logo-cyan: "#38ADFF"
+  website-logo-indigo: "#687CFF"
+  website-logo-violet: "#6445FF"
+  website-logo-magenta: "#AE62FF"
 
 typography:
-  headline-xl:
-    fontFamily: Inter
-    fontSize: 48px
-    fontWeight: 800
-    lineHeight: 1.05
-    letterSpacing: -0.02em
-  headline-lg:
-    fontFamily: Inter
-    fontSize: 36px
-    fontWeight: 800
-    lineHeight: 1.12
-    letterSpacing: -0.01em
-  headline-md:
-    fontFamily: Inter
-    fontSize: 30px
-    fontWeight: 600
-    lineHeight: 1.2
-  title-lg:
-    fontFamily: Inter
-    fontSize: 24px
-    fontWeight: 600
-    lineHeight: 1.25
-  title-md:
-    fontFamily: Inter
-    fontSize: 20px
-    fontWeight: 600
-    lineHeight: 1.3
-  body-lg:
-    fontFamily: Inter
-    fontSize: 18px
-    fontWeight: 400
-    lineHeight: 1.5
-  body-md:
-    fontFamily: Inter
+  ui-body:
+    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
     fontSize: 16px
     fontWeight: 400
     lineHeight: 1.5
-  body-sm:
-    fontFamily: Inter
-    fontSize: 14px
-    fontWeight: 400
-    lineHeight: 1.45
-  label-md:
-    fontFamily: Inter
+  button-label:
+    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
     fontSize: 14px
     fontWeight: 500
     lineHeight: 1
-  caption:
-    fontFamily: Inter
-    fontSize: 12px
+  card-title:
+    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontSize: 16px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: -0.025em
+  card-description:
+    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontSize: 14px
     fontWeight: 400
-    lineHeight: 1.35
-  mono-label:
-    fontFamily: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
-    fontSize: 12px
-    fontWeight: 500
-    lineHeight: 1.35
-    letterSpacing: 0.08em
-  hero-serif-accent:
-    fontFamily: Bodoni Moda
+    lineHeight: 1.5
+  outfit-display:
+    fontFamily: Outfit, Inter, -apple-system, BlinkMacSystemFont, sans-serif
     fontSize: 48px
-    fontWeight: 400
-    lineHeight: 1.05
+    fontWeight: 700
+    lineHeight: 1.1
 
 rounded:
   sm: 4px
   md: 6px
   lg: 8px
-  full: 9999px
+  base: "0.5rem"
+  full: "9999px"
 
 spacing:
   base: 4px
-  xs: 4px
-  sm: 8px
-  md: 16px
-  lg: 24px
-  xl: 32px
-  2xl: 48px
-  3xl: 64px
-  panel-gap: 16px
   card-padding: 24px
-  ai-chat-width: 336px
+  card-header-gap: 6px
+  button-sm-height: 36px
+  button-default-height: 40px
+  button-lg-height: 44px
+  icon-button-sm: 36px
+  icon-button-default: 40px
+  icon-button-lg: 44px
 
 components:
   button-default:
-    backgroundColor: "{colors.foreground}"
-    textColor: "{colors.inverse-text}"
-    typography: "{typography.label-md}"
+    backgroundColor: "{colors.gray-11}"
+    textColor: "{colors.gray-1}"
+    typography: "{typography.button-label}"
     rounded: "{rounded.md}"
-    padding: 10px
-    height: 40px
-  button-default-hover:
-    backgroundColor: "#1D2939"
-    textColor: "{colors.inverse-text}"
-    typography: "{typography.label-md}"
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
+  button-outline:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.gray-11}"
+    typography: "{typography.button-label}"
     rounded: "{rounded.md}"
-    padding: 10px
-    height: 40px
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.inverse-text}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: 10px
-    height: 40px
-  button-primary-hover:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.inverse-text}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: 10px
-    height: 40px
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
   button-secondary:
-    backgroundColor: "{colors.surface-muted}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.label-md}"
+    backgroundColor: "{colors.secondary}"
+    textColor: "{colors.secondary-foreground}"
+    typography: "{typography.button-label}"
     rounded: "{rounded.md}"
-    padding: 10px
-    height: 40px
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
+  button-success:
+    backgroundColor: "{colors.success-7}"
+    textColor: "{colors.gray-1}"
+    typography: "{typography.button-label}"
+    rounded: "{rounded.md}"
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
+  button-warning:
+    backgroundColor: "{colors.warning-7}"
+    textColor: "{colors.gray-1}"
+    typography: "{typography.button-label}"
+    rounded: "{rounded.md}"
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
+  button-info:
+    backgroundColor: "{colors.info-5}"
+    textColor: "{colors.gray-1}"
+    typography: "{typography.button-label}"
+    rounded: "{rounded.md}"
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
+  button-error:
+    backgroundColor: "{colors.error-7}"
+    textColor: "{colors.gray-1}"
+    typography: "{typography.button-label}"
+    rounded: "{rounded.md}"
+    height: "{spacing.button-default-height}"
+    padding: "8px 16px"
   input:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.body-sm}"
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.text-1}"
+    typography: "{typography.card-description}"
     rounded: "{rounded.md}"
-    padding: 12px
     height: 36px
+    padding: "4px 12px"
   card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.text-primary}"
+    backgroundColor: "{colors.card}"
+    textColor: "{colors.card-foreground}"
     rounded: "{rounded.lg}"
     padding: "{spacing.card-padding}"
-  badge-info:
-    backgroundColor: "{colors.info-bg}"
-    textColor: "{colors.info-fg}"
-    typography: "{typography.caption}"
+  badge-default:
+    backgroundColor: "{colors.gray-11}"
+    textColor: "#FFFFFF"
+    typography: "{typography.card-description}"
     rounded: "{rounded.md}"
-    padding: 6px
-  badge-success:
-    backgroundColor: "{colors.success-bg}"
-    textColor: "{colors.success-fg}"
-    typography: "{typography.caption}"
-    rounded: "{rounded.md}"
-    padding: 6px
-  alert-error:
-    backgroundColor: "{colors.error-bg}"
-    textColor: "{colors.error-fg}"
-    typography: "{typography.body-sm}"
-    rounded: "{rounded.lg}"
-    padding: 16px
+    padding: "2px 10px"
 ---
 
 # NemoVideo DESIGN.md
 
 ## Overview
 
-NemoVideo is an AI video-editing agent: users describe what they want in chat, and the product helps discover trends, analyze viral references, write scripts, cut footage, and generate ready-to-post content.
+This file now follows the current Nemo Video codebase exactly. The normative source is:
 
-The interface should feel confident, effortless, action-first, and creator-to-creator. Its visual identity is restrained rather than loud: one clear blue, quiet neutral surfaces, hairline borders, practical shadows, and generous but work-focused spacing.
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/styles/globals.css`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/tailwind.config.js`
+- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/components/ui/*`
 
-The production layer is the source of truth. Values from `packages/design` and the exported codebase documentation override older Figma values. The Figma file remains important because it documents original Arco component states, color roles, and interaction intent.
+The product UI design system is `@nemo/design`: a shadcn/Radix/Tailwind component library with CSS variables, class-based dark mode, Inter as the default UI font, and an Untitled-UI-style gray/status palette.
 
-Signature copy:
-
-- **English:** Chat Your Way to Virality
-- **Chinese:** 对话即爆款
-- **Positioning:** Pro AI Video Editing Agent / 专业 AI 视频剪辑 Agent
+The website app also has a marketing layer with `brand1-*` RGB variables, logo gradients, and `#7145FE` purple accents. Those are documented as website-layer tokens, but they are not the core product UI palette.
 
 ## Colors
 
-The shipped palette uses `#3369FF` as the production primary. Use it for focus rings, links, active states, and the single most important CTA in a view. The default solid button is intentionally neutral black/white, not blue, so blue remains meaningful.
+The production UI consumes color through CSS variables in HSL channels:
 
-Production color roles:
+```css
+color: hsl(var(--text-1));
+background: hsl(var(--background));
+border-color: hsl(var(--line-1));
+```
 
-- **Primary (`#3369FF`):** Brand action color for one primary CTA, focus, links, and selected states.
-- **Primary hover (`#4C8CFF`):** Hover state for primary action surfaces.
-- **Primary soft (`#F0F7FF`):** Subtle selected backgrounds, info-tinted panels, and low-emphasis active states.
-- **Background (`#F9FAFB`):** Light app canvas.
-- **Surface (`#FFFFFF`):** Cards, popovers, panels, and controls.
-- **Foreground (`#101828`):** Strong text and default solid button background.
-- **Border (`#EAECF0`):** Hairline dividers and card boundaries.
-- **Muted surface (`#F2F4F7`):** Secondary fills and low-priority UI.
+Do not replace these with Figma hex values. The current code uses `--brand-1: 217 100% 60%` for product brand color, which corresponds to `#3369FF` in the code comment.
 
-Dark mode uses the same semantic token names under `.dark`. Do not create separate dark-only component variants when token switching is enough.
+### Product Light Theme
 
-- **Dark background (`#101828`):** App canvas in dark mode.
-- **Dark surface (`#1D2939`):** Cards, popovers, and panels.
-- **Dark muted surface (`#344054`):** Secondary fills and low-emphasis containers.
-- **Dark primary text (`#FCFCFD`):** Main foreground.
-- **Dark secondary text (`#EAECF0`):** Secondary labels and body copy.
-- **Dark focus (`#80AAFF`):** Brighter brand ring for dark surfaces.
+| Token | Code value | Code comment |
+|---|---:|---|
+| `--brand-1` | `217 100% 60%` | `#3369FF` |
+| `--brand-2` | `217 100% 63%` | `#4080FF` |
+| `--brand-3` | `217 100% 65%` | `#4C8CFF` |
+| `--brand-4` | `217 100% 75%` | `#80AAFF` |
+| `--brand-5` | `217 100% 87%` | `#BDD6FF` |
+| `--brand-6` | `217 100% 93%` | `#D9E8FF` |
+| `--brand-7` | `217 100% 97%` | `#F0F7FF` |
+| `--background` | `210 20% 98%` | `#F9FAFB` |
+| `--text-1` | `221 33% 11%` | `#101828` |
+| `--text-2` | `215 14% 34%` | `#475467` |
+| `--text-3` | `220 9% 46%` | `#667085` |
+| `--text-4` | `218 11% 65%` | `#98A2B3` |
+| `--line-1` | `220 13% 93%` | `#EAECF0` |
+| `--mask-1` | `0 0% 0% / 0.4` | `#00000066` |
 
-Status colors are semantic and should not be used as decoration:
+Gray scale is exactly the `@nemo/design` Untitled UI blue-gray ramp:
 
-- **Success (`#12B76A`, bg `#ECFDF3`):** Completed, valid, positive result.
-- **Warning (`#F79009`, bg `#FFFAEB`):** Non-blocking caution.
-- **Error (`#F04438`, bg `#FEF3F2`):** Destructive, failed, invalid.
-- **Info (`#1776FF`, bg `#F0F7FF`):** Guidance and neutral notices.
+| Token | Code value | Code comment |
+|---|---:|---|
+| `--gray-1` | `220 14% 99%` | `#FCFCFD` |
+| `--gray-2` | `210 20% 98%` | `#F9FAFB` |
+| `--gray-3` | `220 14% 96%` | `#F2F4F7` |
+| `--gray-4` | `220 13% 93%` | `#EAECF0` |
+| `--gray-5` | `216 12% 84%` | `#D0D5DD` |
+| `--gray-6` | `218 11% 65%` | `#98A2B3` |
+| `--gray-7` | `220 9% 46%` | `#667085` |
+| `--gray-8` | `215 14% 34%` | `#475467` |
+| `--gray-9` | `217 19% 27%` | `#344054` |
+| `--gray-10` | `215 25% 17%` | `#1D2939` |
+| `--gray-11` | `221 33% 11%` | `#101828` |
 
-Figma reference values:
+Status colors follow the full `success-*`, `warning-*`, and `error-*` ramps in `globals.css`. The default Tailwind semantic mappings are `success` -> `success-7`, `warning` -> `warning-7`, `error/destructive` -> `error-7`, and `info` -> `info-5`.
 
-- **Figma primary (`#165DFF`):** Original Arco default primary. Use as design-history reference, not production replacement.
-- **Figma hover (`#4080FF`) and pressed (`#0E42D2`):** State intent for the original component library.
-- **Figma gray 11 (`#13141D`), gray 10 (`#4E5469`), gray 9 (`#868B9C`), gray 8 (`#B8BAC4`):** Original text hierarchy.
-- **Decorative colors:** Teal `#5BEEDE`, pink `#F7AEF3`, purple `#7145FE`, and logo gradients are for illustration and brand art only, not UI primitives.
+### Product Dark Theme
+
+Dark mode is activated by the `.dark` class on the root element. `ThemeProvider` supports `light`, `dark`, and `auto`, stores the mode in `localStorage` under `nemo-theme`, and temporarily adds `disable-transitions` during theme changes.
+
+| Token | Code value |
+|---|---:|
+| `--brand-1` | `217 100% 65%` |
+| `--brand-2` | `217 100% 68%` |
+| `--brand-3` | `217 100% 70%` |
+| `--brand-4` | `217 100% 80%` |
+| `--brand-5` | `217 100% 90%` |
+| `--brand-6` | `217 100% 95%` |
+| `--brand-7` | `217 100% 98%` |
+| `--background` | `220 17% 7%` |
+| `--text-1` | `220 14% 96%` |
+| `--text-2` | `216 12% 84%` |
+| `--text-3` | `218 11% 65%` |
+| `--text-4` | `224 10% 45%` |
+| `--line-1` | `224 12% 18%` |
+| `--mask-1` | `0 0% 0% / 0.7` |
+
+Dark gray scale is not a guessed inversion; it is exactly the code:
+
+| Token | Code value | Code comment |
+|---|---:|---|
+| `--gray-1` | `220 17% 7%` | `#0F1115` |
+| `--gray-2` | `225 14% 11%` | `#181A20` |
+| `--gray-3` | `224 12% 18%` | `#292C34` |
+| `--gray-4` | `222 10% 32%` | `#494E5A` |
+| `--gray-5` | `224 10% 45%` | `#676D7D` |
+| `--gray-6` | `218 11% 65%` | `#98A2B3` |
+| `--gray-7` | `216 12% 84%` | `#D0D5DD` |
+| `--gray-8` | `220 13% 93%` | `#EAECF0` |
+| `--gray-9` | `220 14% 96%` | `#F2F4F7` |
+| `--gray-10` | `210 20% 98%` | `#F9FAFB` |
+| `--gray-11` | `220 14% 99%` | `#FCFCFD` |
+
+Dark status ramps are also defined explicitly in `globals.css`, not generated at runtime:
+
+| Token | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `--success-*` | `153 88% 20%` | `155 90% 23%` | `160 96% 27%` | `158 96% 33%` | `154 82% 42%` | `152 69% 55%` | `145 65% 70%` | `145 75% 84%` | `141 79% 92%` | `145 80% 97%` | `140 60% 99%` |
+| `--warning-*` | `18 80% 30%` | `21 84% 34%` | `24 91% 40%` | `28 96% 47%` | `33 94% 53%` | `36 98% 59%` | `40 99% 68%` | `43 98% 80%` | `43 96% 91%` | `45 100% 97%` | `45 100% 99%` |
+| `--error-*` | `4 64% 32%` | `4 68% 36%` | `4 76% 43%` | `4 74% 52%` | `4 86% 61%` | `4 92% 72%` | `4 89% 83%` | `4 93% 91%` | `4 100% 95%` | `6 100% 98%` | `10 100% 99%` |
+
+### Website Layer
+
+`apps/nemovideo-website/src/app/globals.css` imports `@nemo/design/styles`, then defines additional website variables. Important website tokens:
+
+- `--brand1-1` through `--brand1-7`: `232 243 255`, `190 218 255`, `148 191 255`, `106 161 255`, `64 128 255`, `22 93 255`, `14 66 210`.
+- Logo gradient: `#308DFF -> #38ADFF -> #687CFF -> #6445FF -> #AE62FF`.
+- Marketing purple used in many website CTAs and blog surfaces: `#7145FE`.
+- Website shadcn defaults also define `--primary: 0 0% 9%`, `--background: 0 0% 100%`, etc.; do not confuse those with `@nemo/design` product tokens.
 
 ## Typography
 
-The production UI uses **Inter**. It should feel efficient, modern, and readable inside dense workbench surfaces. Figma contains Roboto and project-local Chinese styles, but new production UI should use the shipped font stack.
+The product UI font family is defined in `packages/design/tailwind.config.js`:
 
-- **Headlines:** Inter ExtraBold or SemiBold for page and section titles.
-- **Body:** Inter Regular at 16px for primary reading and 14px for dense panels.
-- **Labels:** Inter Medium at 14px for controls and compact UI.
-- **Metadata:** 12px mono labels for tokens, timestamps, and technical identifiers.
-- **Chinese:** Use the system Chinese stack, typically PingFang SC on macOS/iOS.
-- **Serif accent:** Bodoni Moda Italic is reserved for the hero phrase `to Virality`. Do not use it in product chrome.
+- `font-sans`: `Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif`
+- `font-outfit`: `Outfit, Inter, -apple-system, BlinkMacSystemFont, sans-serif`
 
-Avoid viewport-scaled type in application UI. Keep letter spacing at `0` in dense controls and panels; only token labels or metadata may use wider tracking.
+The app imports Inter and Outfit in `apps/nemovideo/src/index.css`. Button text uses `text-sm font-medium`. Card titles use `font-semibold leading-none tracking-tight`. Card descriptions use `text-sm text-text-3`.
 
 ## Layout
 
-NemoVideo follows a VSCode-style pluggable workbench. Product features contribute views into named containers instead of creating isolated page layouts.
+The root app uses `bg-background text-foreground`, so the page canvas is `hsl(var(--background))` and text defaults to `hsl(var(--text-1))`.
 
-Core shells:
+Spacing and sizing come from Tailwind plus `packages/design/src/lib/sizes.ts`:
 
-- **WorkspaceLayout:** Home/workspace routes such as viral, uploaded, generated, and subscription.
-- **TaskLayout:** Editing workspace with a task header, left icon rail, resizable panels, and right AI chat.
-- **PendingTaskLayout:** Transitional and loading task states.
-
-Task layout:
-
-- **AI chat panel:** Fixed at `336px`.
-- **Panels:** Media, Script, Storyboard, Preview.
-- **Panel behavior:** Draggable, resizable, collapsible, and able to auto-expand when AI acts on them.
-- **Workflow phases:** Upload, script, planning, confirm elements, storyboard ready, generating, timeline-only, completed.
-
-Spacing uses a 4px base. Standard card padding is 24px. Controls in the same row should share the same size ramp so icon buttons, avatars, status dots, and buttons align cleanly.
+- Button: `sm h-9 px-3`, `default h-10 px-4 py-2`, `lg h-11 px-8`, `xl h-12 px-6 py-3`, `2xl h-14 px-8 py-4`.
+- Icon button: `sm h-9 w-9`, `default h-10 w-10`, `lg h-11 w-11`, `xl h-12 w-12`, `2xl h-14 w-14`.
+- Icon: `sm h-3.5 w-3.5`, `default h-4 w-4`, `lg h-5 w-5`, `xl h-6 w-6`, `2xl h-8 w-8`.
+- Avatar: `sm h-8 w-8`, `default h-10 w-10`, `lg h-12 w-12`, `xl h-16 w-16`, `2xl h-20 w-20`.
+- Status dot: `sm h-2 w-2`, `default h-3 w-3`, `lg h-4 w-4`, `xl h-5 w-5`, `2xl h-6 w-6`.
 
 ## Elevation & Depth
 
-Depth is restrained. Separate surfaces with borders and quiet shadows rather than heavy outlines or decorative glow.
+Depth follows Tailwind/shadcn defaults in the component classes:
 
-- **Cards:** `0 1px 3px rgba(16,24,40,.1), 0 1px 2px rgba(16,24,40,.06)`.
-- **Inputs:** `0 1px 2px rgba(16,24,40,.05)`.
-- **Popovers/dialogs:** Use a stronger but still practical shadow, equivalent to `shadow-lg`.
-- **Focus:** Use a visible brand ring, normally `ring-2` with `#3369FF` in light mode and `#80AAFF` in dark mode.
-- **Overlay mask:** Light mode uses `rgba(0,0,0,.40)`; dark mode uses `rgba(0,0,0,.70)`.
+- `Card`: `rounded-lg border border-line-1 bg-card text-card-foreground shadow`.
+- `Input`: `shadow-sm`.
+- Buttons in status variants use `shadow`; default and outline buttons do not add custom shadow.
+- Focus states use `focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2` for buttons and `focus-visible:ring-1 focus-visible:ring-brand-1` for inputs.
 
-The AI action glow is the only expressive glow. It should identify the panel the agent is acting on, not decorate static surfaces.
+The code also defines `.bg-gradient-brand` as `linear-gradient(135deg, #3369ff 0%, #101828 100%)` and `animate-shimmer` text gradients based on `gray-*`.
 
 ## Shapes
 
-The shape language is practical and slightly soft.
+The base radius is exact code: `--radius: 0.5rem`.
 
-- **Cards:** 8px radius.
-- **Buttons:** 6px radius.
-- **Inputs:** 6px radius.
-- **Badges:** 6px radius.
-- **Avatars and pills:** Fully rounded.
+Tailwind radius mapping:
 
-Borders are 1px hairlines using the semantic border token. Do not restyle scrollbars per view; use the shared thin scrollbar treatment with a transparent track.
+- `rounded-lg`: `var(--radius)`
+- `rounded-md`: `calc(var(--radius) - 2px)`
+- `rounded-sm`: `calc(var(--radius) - 4px)`
+
+Button, Input, Badge, Card, Alert, and related primitives use these shared radius tokens. Do not replace them with arbitrary pixel values unless the component code does so explicitly.
 
 ## Components
 
-Build with `@nemo/design` shadcn-style components. The Figma `oc-*` component sets are the origin and a richer reference for state roles, but they are not the production implementation target.
+`@nemo/design` components are the implementation source. Important exact classes:
 
-Component mapping:
+- `Button` base: `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50`.
+- `Button default`: `bg-gray-11 text-gray-1 hover:opacity-90`.
+- `Button outline`: `border border-input bg-background text-gray-11 hover:bg-gray-3`.
+- `Button secondary`: `bg-secondary text-secondary-foreground hover:bg-secondary/80`.
+- `Button ghost`: `text-gray-11 hover:bg-gray-3`.
+- `Button link`: `text-primary underline-offset-4 hover:underline`.
+- `Button success/warning/info/error`: status background, `text-gray-1`, `shadow`, `hover:opacity-90`.
+- `Badge default`: `border-transparent bg-gray-11 text-[hsl(0,0%,100%)] hover:opacity-90`.
+- `Card`: `rounded-lg border border-line-1 bg-card text-card-foreground shadow`.
+- `Input`: `h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm placeholder:text-text-3 focus-visible:ring-1 focus-visible:ring-brand-1`.
+- `Alert`: `relative w-full rounded-lg border p-4 flex items-start gap-3`; variants color only the icon.
 
-- **Button:** Figma `oc-button` -> code `Button`.
-- **Badge/tag:** Figma `oc-tag` -> code `Badge`.
-- **Input:** Figma `oc-input` -> code `Input`.
-- **Select:** Figma `oc-select-title` -> code `Select`.
-- **Checkbox:** Figma `oc-checkbox` -> code `Checkbox`.
-- **Radio:** Figma `oc-radio-group-item` -> code `RadioGroup`.
-- **Switch:** Figma `oc-switch` -> code `Switch`.
-- **Progress:** Figma `oc-progress` -> code `Progress`.
-- **Tooltip:** Figma `oc-tooltip` -> code `Tooltip`.
-- **Banner:** Figma `oc-banner` -> code `Alert`.
-- **Navigation:** Figma nav items -> code `NavigationMenu` or `Tabs`.
-
-Button variants should use existing names: `default`, `outline`, `secondary`, `ghost`, `link`, `success`, `warning`, `info`, and `error`. Do not invent names like `primaryBlue` or `darkOutline`.
-
-Inputs use surface backgrounds, semantic borders, `text-placeholder` for placeholders, and brand focus rings. Cards use `surface`, `border`, `rounded-lg`, and quiet shadow. Avoid nesting cards inside cards unless the inner card is a repeated item, modal, or framed tool surface.
+Use the exported component variants instead of creating new variant names. If a page needs marketing-specific purple (`#7145FE`), keep that in the website layer; do not feed it back into `@nemo/design` product primitives.
 
 ## Do's and Don'ts
 
-- Do use ship/code tokens as the production source of truth.
-- Do use Figma values to understand design intent, state roles, and component anatomy.
-- Do keep brand blue scarce: links, focus, active state, and one primary CTA per view.
-- Do support light and dark mode through semantic token switching under `.dark`.
-- Do keep text hierarchy explicit: primary, secondary, tertiary, placeholder.
-- Do use status colors only for their semantic meaning.
-- Don't replace production `#3369FF` with Figma `#165DFF` without an intentional migration.
-- Don't use decorative teal, pink, purple, or logo gradients as UI component colors.
-- Don't hardcode hex values inside components when a token exists.
-- Don't create dark-only component variants when semantic tokens can solve the state.
-- Don't use the serif accent outside the hero phrase.
-- Don't add new primitives before checking `@nemo/design`.
+- Do use `@nemo/design/styles` and `@nemo/design/tailwind` as the source of truth for product UI.
+- Do reference colors through Tailwind classes such as `bg-brand-1`, `text-text-1`, `border-line-1`, `bg-background`, and `text-foreground`.
+- Do keep dark mode as `.dark` class switching through `ThemeProvider`.
+- Do use the website layer tokens only for `apps/nemovideo-website`.
+- Don't use the Figma `#165DFF` primary as product UI primary; the code primary is `--brand-1: 217 100% 60%`.
+- Don't rewrite HSL channel values into approximate hex values in implementation docs.
+- Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.
+- Don't invent new component variants when `Button`, `Badge`, `Card`, `Input`, and `Alert` already define the variants in code.
