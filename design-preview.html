@@ -291,28 +291,28 @@ components:
     padding: "8px 16px"
   button-success:
     backgroundColor: "{colors.success-7}"
-    textColor: "{colors.gray-1}"
+    textColor: "{colors.gray-11}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-warning:
     backgroundColor: "{colors.warning-7}"
-    textColor: "{colors.gray-1}"
+    textColor: "{colors.gray-11}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-info:
     backgroundColor: "{colors.info-5}"
-    textColor: "{colors.gray-1}"
+    textColor: "{colors.gray-11}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-error:
     backgroundColor: "{colors.error-7}"
-    textColor: "{colors.gray-1}"
+    textColor: "{colors.gray-11}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
@@ -567,12 +567,24 @@ Button, Input, Badge, Card, Alert, and related primitives use these shared radiu
 
 Use the exported component variants instead of creating new variant names. If a page needs marketing-specific purple (`#7145FE`), keep that in the website layer; do not feed it back into `@nemo/design` product primitives.
 
+### WCAG AA Component Targets
+
+The current implementation uses `text-gray-1` on status button backgrounds. The `DESIGN.md` component tokens intentionally set status button text to `gray-11` so the documented target reaches WCAG AA contrast without changing the current status background tokens:
+
+| Component token | Background | AA text color | Contrast target |
+|---|---|---|---|
+| `button-success` | `success-7` | `gray-11` | `>= 4.5:1` |
+| `button-warning` | `warning-7` | `gray-11` | `>= 4.5:1` |
+| `button-info` | `info-5` | `gray-11` | `>= 4.5:1` |
+| `button-error` | `error-7` | `gray-11` | `>= 4.5:1` |
+
 ## Do's and Don'ts
 
 - Do use `@nemo/design/styles` and `@nemo/design/tailwind` as the source of truth for product UI.
 - Do reference colors through Tailwind classes such as `bg-brand-1`, `text-text-1`, `border-line-1`, `bg-background`, and `text-foreground`.
 - Do keep dark mode as `.dark` class switching through `ThemeProvider`.
 - Do use the website layer tokens only for `apps/nemovideo-website`.
+- Do use `gray-11` text on solid status button backgrounds when documenting or implementing WCAG AA targets.
 - Don't use the Figma `#165DFF` primary as product UI primary; the code primary is `--brand-1: 217 100% 60%`.
 - Don't rewrite HSL channel values into approximate hex values in implementation docs.
 - Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.

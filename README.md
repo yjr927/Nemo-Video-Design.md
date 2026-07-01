@@ -47,7 +47,7 @@ The file follows the Google `DESIGN.md` structure:
 npx -y @google/design.md lint design.md
 ```
 
-The current document validates with zero structural errors. Some warnings are expected because the file intentionally includes complete color ramps and mirrors the current component contrast choices in code.
+The current document validates with zero structural errors. Remaining warnings are expected because the file intentionally includes complete color ramps and reference tokens that are not all attached to component examples.
 
 ---
 
@@ -94,4 +94,4 @@ The current document validates with zero structural errors. Some warnings are ex
 npx -y @google/design.md lint design.md
 ```
 
-当前文档没有结构错误。部分 token 未被组件直接引用、以及个别状态按钮对比度 warning 属于预期情况，因为文档完整保留了代码里的色阶和当前组件实现。
+当前文档没有结构错误。剩余 warning 主要来自完整色阶和参考 token 没有全部直接绑定到组件示例，属于预期情况。
