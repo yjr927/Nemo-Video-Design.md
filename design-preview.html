@@ -7,6 +7,94 @@
 <style>
 :root{--brand-1:hsl(217 100% 60%);--background:hsl(210 20% 98%);--foreground:hsl(221 33% 11%);--text-2:hsl(215 14% 34%);--text-3:hsl(220 9% 46%);--text-4:hsl(218 11% 65%);--line-1:hsl(220 13% 93%);--gray-1:hsl(220 14% 99%);--gray-3:hsl(220 14% 96%);--gray-11:hsl(221 33% 11%);--radius-md:6px;--radius-lg:8px;--shadow:0 1px 3px rgb(16 24 40 / 10%),0 1px 2px rgb(16 24 40 / 6%);color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--background);color:var(--foreground);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}code{border:1px solid var(--line-1);border-radius:5px;background:var(--gray-3);color:var(--text-2);padding:1px 5px;font-size:.92em;overflow-wrap:anywhere}pre{overflow:auto;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:#101828;color:#f2f4f7;padding:16px;font-size:12px;line-height:1.6}pre code{border:0;background:transparent;color:inherit;padding:0;font-size:inherit}.shell{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid var(--line-1);background:var(--gray-1);padding:20px}.brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.mark{display:grid;width:36px;height:36px;place-items:center;border-radius:var(--radius-lg);background:var(--gray-11);color:var(--gray-1);font-family:Outfit,Inter,sans-serif;font-size:18px;font-weight:800}.brand strong{display:block;line-height:1.1}.brand span{display:block;margin-top:2px;color:var(--text-3);font-size:11px}.nav{display:grid;gap:4px}.nav a{border-radius:var(--radius-md);color:var(--text-2);font-size:13px;padding:9px 10px}.nav a:hover{background:var(--gray-3);color:var(--foreground)}.sidebar-note{margin-top:24px;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);padding:14px;color:var(--text-2);font-size:12px;overflow-wrap:anywhere}main{min-width:0}.hero{border-bottom:1px solid var(--line-1);background:linear-gradient(180deg,var(--gray-1) 0%,var(--background) 100%);padding:32px clamp(24px,5vw,56px) 28px}.kicker{color:var(--brand-1);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}h1{max-width:900px;margin:10px 0 10px;font-size:34px;line-height:1.12;letter-spacing:0}.hero p{max-width:900px;margin:0;color:var(--text-2);font-size:14px}.summary-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.pill{display:inline-flex;align-items:center;min-height:30px;border:1px solid var(--line-1);border-radius:999px;background:var(--gray-1);color:var(--text-2);padding:0 10px;font-size:12px}.pill strong{color:var(--foreground);margin-right:6px}.content{display:grid;gap:20px;padding:24px clamp(24px,5vw,56px) 56px}section{scroll-margin-top:24px}.panel{border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--gray-1);box-shadow:var(--shadow);overflow:hidden}.panel-header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line-1);padding:16px 20px}.panel-header h2,.panel-header h3{margin:0;font-size:18px}.count{color:var(--text-4);font-size:12px}.panel-body{padding:20px}.token-groups{display:grid;gap:20px}.group-title{margin:0 0 10px;color:var(--text-2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.token-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.token-card{min-width:0;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);overflow:hidden}.swatch{display:flex;min-height:64px;align-items:center;justify-content:center;border-bottom:1px solid var(--line-1);background:var(--swatch);color:var(--swatch-text,var(--foreground));font-size:12px;font-weight:700;text-align:center;padding:8px;overflow-wrap:anywhere}.swatch.alias{background:repeating-linear-gradient(135deg,var(--gray-3),var(--gray-3) 8px,var(--background) 8px,var(--background) 16px);color:var(--text-2)}.token-meta{padding:10px 12px 12px}.token-name{font-size:13px;font-weight:700;overflow-wrap:anywhere}.token-value{margin-top:3px;color:var(--text-3);font-size:12px;overflow-wrap:anywhere}.table-wrap{overflow:auto;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background)}table{width:100%;border-collapse:collapse;min-width:620px;font-size:13px}th,td{border-bottom:1px solid var(--line-1);border-right:1px solid var(--line-1);padding:10px 12px;text-align:left;vertical-align:top}th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}th{background:var(--gray-3);color:var(--foreground);font-weight:700}td{color:var(--text-2);overflow-wrap:anywhere}.kv-table table{min-width:0}.kv-table th:first-child,.kv-table td:first-child{width:240px}.spec-stack{display:grid;gap:18px}.markdown-body{display:grid;gap:20px;color:var(--text-2)}.markdown-body h2,.markdown-body h3{color:var(--foreground);margin:12px 0 0}.markdown-body h2{font-size:22px}.markdown-body h3{font-size:17px}.markdown-body p{margin:0}.markdown-body ul{margin:0;padding-left:20px}.markdown-body li{margin:7px 0}.markdown-body blockquote{margin:0;border-left:3px solid var(--brand-1);background:var(--gray-3);padding:12px 14px;color:var(--text-2)}.markdown-table-anchor{margin-top:8px}@media(max-width:1120px){.token-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:900px){.shell{grid-template-columns:1fr}.sidebar{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line-1)}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.token-grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:30px}}@media(max-width:560px){.token-grid{grid-template-columns:1fr}.content,.hero{padding-left:18px;padding-right:18px}}
 </style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
+.demo-groups{display:grid;gap:24px}
+.demo-block .group-title{margin-bottom:12px}
+.demo-stage{display:flex;flex-wrap:wrap;gap:14px;align-items:center;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);padding:18px}
+.demo-cap{margin-top:8px;color:var(--text-4);font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;border:1px solid transparent;border-radius:var(--radius-md);height:40px;padding:0 16px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:opacity .15s,background .15s}
+.btn:hover{opacity:.9}
+.btn-default{background:var(--gray-11);color:var(--gray-1)}
+.btn-outline{background:var(--background);color:var(--gray-11);border-color:var(--line-1)}
+.btn-outline:hover{background:var(--gray-3);opacity:1}
+.btn-secondary{background:var(--gray-3);color:var(--foreground)}
+.btn-ghost{background:transparent;color:var(--gray-11)}
+.btn-ghost:hover{background:var(--gray-3);opacity:1}
+.btn-link{background:transparent;color:var(--brand-1);text-decoration:underline;text-underline-offset:4px}
+.btn-success{background:var(--success-7);color:var(--gray-1);box-shadow:var(--shadow)}
+.btn-warning{background:var(--warning-7);color:var(--gray-1);box-shadow:var(--shadow)}
+.btn-info{background:var(--info-5);color:var(--gray-1);box-shadow:var(--shadow)}
+.btn-error{background:var(--error-7);color:var(--gray-1);box-shadow:var(--shadow)}
+.btn-sm{height:36px;padding:0 12px}
+.btn-lg{height:44px;padding:0 32px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-radius:var(--radius-md);padding:2px 10px;font-size:12px;font-weight:600;line-height:1.5}
+.badge-default{background:var(--gray-11);color:#fff}
+.badge-secondary{background:var(--gray-3);color:var(--foreground)}
+.badge-destructive{background:var(--error-7);color:#fff}
+.badge-outline{background:transparent;color:var(--foreground);border-color:var(--line-1)}
+.badge-success{background:var(--success-7);color:#fff}
+.badge-warning{background:var(--warning-7);color:#fff}
+.badge-info{background:var(--info-5);color:#fff}
+.dot{display:inline-block;width:12px;height:12px;border-radius:999px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2)}
+.inp{height:36px;width:220px;border:1px solid var(--line-1);border-radius:var(--radius-md);background:var(--background);padding:0 12px;font-size:14px;color:var(--foreground);font-family:inherit;box-shadow:var(--shadow)}
+.inp::placeholder{color:var(--text-3)}
+.inp:focus{outline:none;border-color:var(--brand-1);box-shadow:0 0 0 1px var(--brand-1)}
+.ta{width:260px;min-height:60px;border:1px solid var(--line-1);border-radius:var(--radius-md);background:var(--background);padding:8px 12px;font-size:14px;color:var(--foreground);font-family:inherit;box-shadow:var(--shadow);resize:vertical}
+.ta:focus{outline:none;border-color:var(--brand-1);box-shadow:0 0 0 1px var(--brand-1)}
+.uicard{border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--gray-1);box-shadow:var(--shadow);padding:20px;width:280px}
+.uicard h4{margin:0 0 6px;font-size:16px;font-weight:600;letter-spacing:-.025em}
+.uicard p{margin:0;color:var(--text-3);font-size:14px}
+.alert{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);padding:16px;width:300px}
+.alert i{width:18px;height:18px;border-radius:999px;flex:0 0 auto;margin-top:1px}
+.alert b{display:block;font-size:14px;color:var(--foreground)}
+.alert span{font-size:13px;color:var(--text-3)}
+.sw{position:relative;display:inline-block;width:36px;height:20px;border-radius:999px;background:var(--gray-5);transition:background .15s}
+.sw.on{background:var(--brand-1)}
+.sw i{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:999px;background:#fff;box-shadow:var(--shadow);transition:left .15s}
+.sw.on i{left:18px}
+.cb{width:16px;height:16px;border-radius:4px;border:1px solid var(--gray-11);display:inline-grid;place-items:center;color:#fff;font-size:11px;line-height:1}
+.cb.on{background:var(--brand-1);border-color:var(--brand-1)}
+.rd{width:16px;height:16px;border-radius:999px;border:1px solid var(--gray-11);display:inline-grid;place-items:center}
+.rd i{width:8px;height:8px;border-radius:999px;background:var(--brand-1);display:none}
+.rd.on i{display:block}
+.sl{position:relative;width:180px;height:6px;border-radius:999px;background:var(--gray-3)}
+.sl .rng{position:absolute;left:0;top:0;bottom:0;width:55%;background:var(--brand-1);border-radius:999px}
+.sl .th{position:absolute;left:55%;top:50%;width:16px;height:16px;border-radius:999px;background:#fff;border:1px solid var(--brand-1);transform:translate(-50%,-50%);box-shadow:var(--shadow)}
+.pg{width:220px;height:8px;border-radius:999px;background:var(--brand-6);overflow:hidden}
+.pg .bar{height:100%;background:var(--brand-1)}
+.av{display:inline-grid;place-items:center;border-radius:999px;background:var(--gray-3);color:var(--text-2);font-weight:600;overflow:hidden}
+.tabs{display:inline-flex;height:36px;padding:4px;gap:2px;border-radius:var(--radius-lg);background:var(--gray-3)}
+.tab{display:inline-flex;align-items:center;padding:0 12px;border-radius:var(--radius-md);font-size:14px;font-weight:500;color:var(--text-3);cursor:pointer}
+.tab.on{background:var(--background);color:var(--foreground);box-shadow:var(--shadow)}
+.seg{display:inline-flex;border:1px solid var(--line-1);border-radius:var(--radius-md);overflow:hidden}
+.seg span{padding:6px 12px;font-size:13px;color:var(--text-2);background:var(--background)}
+.seg span.on{background:var(--gray-3);color:var(--foreground)}
+.tip{display:inline-block;background:var(--gray-11);color:var(--gray-1);border-radius:var(--radius-md);padding:6px 12px;font-size:12px}
+.sk{border-radius:var(--radius-md);background:var(--gray-3);animation:dpulse 1.6s ease-in-out infinite}
+@keyframes dpulse{50%{opacity:.5}}
+.spin{width:20px;height:20px;border-radius:999px;border:2px solid var(--line-1);border-top-color:var(--brand-1);animation:dspin .8s linear infinite}
+@keyframes dspin{to{transform:rotate(360deg)}}
+.grad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.grad-card{border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);overflow:hidden}
+.grad-swatch{height:72px}
+.radius-grid{display:flex;flex-wrap:wrap;gap:18px}
+.radius-card{text-align:center}
+.radius-box{width:88px;height:88px;background:linear-gradient(135deg,var(--brand-4),var(--brand-1));border:1px solid rgb(16 24 40 / 8%)}
+.radius-name{margin-top:8px;font-size:13px;font-weight:700}
+.radius-val{color:var(--text-3);font-size:12px}
+.type-row{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-1)}
+.type-row:last-child{border-bottom:0}
+.type-meta{margin-left:auto;color:var(--text-4);font-size:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap}
+.font-card{border:1px solid var(--line-1);border-radius:var(--radius-lg);background:var(--background);padding:18px;margin-top:12px}
+.font-card .big{font-size:32px;line-height:1.1;margin:0 0 4px}
+.font-weights{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px}
+.font-weights span{font-size:18px}
+@media(max-width:900px){.grad-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grad-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <script type="text/plain" id="design-md">---
@@ -717,7 +805,7 @@ The current implementation uses `text-gray-1` on solid status button backgrounds
 - Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.
 - Don't invent new component variants when `Button`, `Badge`, `Card`, `Input`, and `Alert` already define the variants in code.
 </script>
-<div class="shell"><aside class="sidebar"><div class="brand"><div class="mark">N</div><div><strong>NemoVideo</strong><span class="mono">product UI reference</span></div></div><nav class="nav" aria-label="Preview sections"><a href="#tokens-colors">Color Tokens</a><a href="#tokens-gradients">Gradients</a><a href="#tokens-typography">Typography</a><a href="#tokens-rounded">Radius</a><a href="#tokens-spacing">Spacing</a><a href="#tokens-components">Components</a><a href="#markdown-tables">Spec Tables</a><a href="#markdown-full">Full DESIGN.md</a></nav><div class="sidebar-note">This preview now follows the Nemo Video product workspace direction: compact navigation, dense panels, small metadata, 8px radius, and restrained shadows.</div></aside><main><header class="hero"><div class="kicker mono">NemoVideo DESIGN.md / workspace aligned</div><h1>Product UI tokens for Nemo Video workspace surfaces.</h1><p>Generated from the embedded current Markdown file. The visual density is intentionally closer to the editor/workspace UI than to a marketing or landing page.</p><div class="summary-row" id="summary"></div></header><div class="content"><section id="tokens-colors" class="panel"><div class="panel-header"><h2>Color Tokens</h2><span class="count" id="color-count"></span></div><div class="panel-body"><div class="token-groups" id="color-groups"></div></div></section><section id="tokens-gradients" class="panel"><div class="panel-header"><h2>Gradient Tokens</h2><span class="count" id="gradient-count"></span></div><div class="panel-body kv-table" id="gradient-tokens"></div></section><section id="tokens-typography" class="panel"><div class="panel-header"><h2>Typography Tokens</h2><span class="count" id="typography-count"></span></div><div class="panel-body spec-stack" id="typography-tokens"></div></section><section id="tokens-rounded" class="panel"><div class="panel-header"><h2>Radius Tokens</h2><span class="count" id="rounded-count"></span></div><div class="panel-body kv-table" id="rounded-tokens"></div></section><section id="tokens-spacing" class="panel"><div class="panel-header"><h2>Spacing Tokens</h2><span class="count" id="spacing-count"></span></div><div class="panel-body kv-table" id="spacing-tokens"></div></section><section id="tokens-components" class="panel"><div class="panel-header"><h2>Component Tokens</h2><span class="count" id="component-count"></span></div><div class="panel-body spec-stack" id="component-tokens"></div></section><section id="markdown-tables" class="panel"><div class="panel-header"><h2>Spec Tables</h2><span class="count" id="table-count"></span></div><div class="panel-body spec-stack" id="all-tables"></div></section><section id="markdown-full" class="panel"><div class="panel-header"><h2>Full DESIGN.md Body</h2><span class="count">Rendered prose, lists, code, and tables</span></div><div class="panel-body"><div class="markdown-body" id="markdown-body"></div></div></section></div></main></div>
+<div class="shell"><aside class="sidebar"><div class="brand"><div class="mark">N</div><div><strong>NemoVideo</strong><span class="mono">product UI reference</span></div></div><nav class="nav" aria-label="Preview sections"><a href="#tokens-colors">Color Tokens</a><a href="#tokens-gradients">Gradients</a><a href="#tokens-typography">Typography</a><a href="#tokens-rounded">Radius</a><a href="#tokens-spacing">Spacing</a><a href="#tokens-components">Components</a><a href="#previews">Component Previews</a><a href="#markdown-tables">Spec Tables</a><a href="#markdown-full">Full DESIGN.md</a></nav><div class="sidebar-note">This preview now follows the Nemo Video product workspace direction: compact navigation, dense panels, small metadata, 8px radius, and restrained shadows.</div></aside><main><header class="hero"><div class="kicker mono">NemoVideo DESIGN.md / workspace aligned</div><h1>Product UI tokens for Nemo Video workspace surfaces.</h1><p>Generated from the embedded current Markdown file. The visual density is intentionally closer to the editor/workspace UI than to a marketing or landing page.</p><div class="summary-row" id="summary"></div></header><div class="content"><section id="tokens-colors" class="panel"><div class="panel-header"><h2>Color Tokens</h2><span class="count" id="color-count"></span></div><div class="panel-body"><div class="token-groups" id="color-groups"></div></div></section><section id="tokens-gradients" class="panel"><div class="panel-header"><h2>Gradient Tokens</h2><span class="count" id="gradient-count"></span></div><div class="panel-body"><div class="group-title">Swatches</div><div class="grad-grid" id="gradient-swatches"></div><div class="group-title" style="margin-top:20px">CSS values</div><div class="kv-table" id="gradient-tokens"></div></div></section><section id="tokens-typography" class="panel"><div class="panel-header"><h2>Typography Tokens</h2><span class="count" id="typography-count"></span></div><div class="panel-body"><div class="group-title">Specimens</div><div id="type-specimens"></div><div class="group-title" style="margin-top:20px">Scale &amp; fonts</div><div id="type-extras"></div><div class="group-title" style="margin-top:20px">Token values</div><div class="spec-stack" id="typography-tokens"></div></div></section><section id="tokens-rounded" class="panel"><div class="panel-header"><h2>Radius Tokens</h2><span class="count" id="rounded-count"></span></div><div class="panel-body"><div class="group-title">Radius samples</div><div class="radius-grid" id="radius-samples"></div><div class="group-title" style="margin-top:20px">Values</div><div class="kv-table" id="rounded-tokens"></div></div></section><section id="tokens-spacing" class="panel"><div class="panel-header"><h2>Spacing Tokens</h2><span class="count" id="spacing-count"></span></div><div class="panel-body kv-table" id="spacing-tokens"></div></section><section id="tokens-components" class="panel"><div class="panel-header"><h2>Component Tokens</h2><span class="count" id="component-count"></span></div><div class="panel-body spec-stack" id="component-tokens"></div></section><section id="previews" class="panel"><div class="panel-header"><h2>Component Previews</h2><span class="count">Live rendered @nemo/design components</span></div><div class="panel-body"><div class="demo-groups" id="previews-body"></div></div></section><section id="markdown-tables" class="panel"><div class="panel-header"><h2>Spec Tables</h2><span class="count" id="table-count"></span></div><div class="panel-body spec-stack" id="all-tables"></div></section><section id="markdown-full" class="panel"><div class="panel-header"><h2>Full DESIGN.md Body</h2><span class="count">Rendered prose, lists, code, and tables</span></div><div class="panel-body"><div class="markdown-body" id="markdown-body"></div></div></section></div></main></div>
 <script>
 const raw=document.getElementById('design-md').textContent;
 const escapeHtml=(value)=>String(value??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -735,6 +823,115 @@ function renderNestedObjects(targetId,obj,countId){const entries=Object.entries(
 function extractTables(body){const lines=body.split('\n');const tables=[];for(let i=0;i<lines.length;i++){if(!lines[i].trim().startsWith('|'))continue;const block=[];while(i<lines.length&&lines[i].trim().startsWith('|'))block.push(lines[i++]);i--;if(block.length>=2&&/^\|?\s*:?-{3,}:?/.test(block[1].trim()))tables.push(block);}return tables.map((block)=>{const split=(line)=>line.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map((cell)=>cell.trim());return{headers:split(block[0]),rows:block.slice(2).map(split),raw:block.join('\n')};});}
 function renderMarkdown(body){const lines=body.split('\n');const out=[];let inCode=false;let code=[];let list=[];const flushList=()=>{if(!list.length)return;out.push('<ul>'+list.map((item)=>'<li>'+inlineMd(item)+'</li>').join('')+'</ul>');list=[];};for(let i=0;i<lines.length;i++){const line=lines[i];if(line.startsWith('```')){if(inCode){out.push('<pre><code>'+escapeHtml(code.join('\n'))+'</code></pre>');code=[];inCode=false;}else{flushList();inCode=true;}continue;}if(inCode){code.push(line);continue;}if(line.trim().startsWith('|')){flushList();const block=[];while(i<lines.length&&lines[i].trim().startsWith('|'))block.push(lines[i++]);i--;const table=extractTables(block.join('\n'))[0];if(table)out.push('<div class="markdown-table-anchor">'+renderTable(table.headers,table.rows)+'</div>');continue;}if(/^##\s+/.test(line)){flushList();out.push('<h2>'+inlineMd(line.replace(/^##\s+/,''))+'</h2>');continue;}if(/^###\s+/.test(line)){flushList();out.push('<h3>'+inlineMd(line.replace(/^###\s+/,''))+'</h3>');continue;}if(/^-\s+/.test(line)){list.push(line.replace(/^-\s+/,''));continue;}if(/^>\s?/.test(line)){flushList();out.push('<blockquote>'+inlineMd(line.replace(/^>\s?/,''))+'</blockquote>');continue;}if(!line.trim()){flushList();continue;}flushList();if(!/^#\s+/.test(line))out.push('<p>'+inlineMd(line)+'</p>');}flushList();return out.join('');}
 const doc=splitDocument(raw);const data=parseFrontmatter(doc.frontmatter);const tables=extractTables(doc.body);renderColorGroups(data.colors||{});renderGradientTokens(data.gradients||{});renderNestedObjects('typography-tokens',data.typography||{},'typography-count');document.getElementById('rounded-tokens').innerHTML=renderObjectTable(data.rounded||{});document.getElementById('rounded-count').textContent=Object.keys(data.rounded||{}).length+' tokens';document.getElementById('spacing-tokens').innerHTML=renderObjectTable(data.spacing||{});document.getElementById('spacing-count').textContent=Object.keys(data.spacing||{}).length+' tokens';renderNestedObjects('component-tokens',data.components||{},'component-count');document.getElementById('table-count').textContent=tables.length+' tables';document.getElementById('all-tables').innerHTML=tables.map((table,index)=>'<div><h3 class="group-title">Markdown table '+(index+1)+'</h3>'+renderTable(table.headers,table.rows)+'</div>').join('');document.getElementById('markdown-body').innerHTML=renderMarkdown(doc.body);const summary=[['colors',Object.keys(data.colors||{}).length],['gradients',Object.keys(data.gradients||{}).length],['typography',Object.keys(data.typography||{}).length],['rounded',Object.keys(data.rounded||{}).length],['spacing',Object.keys(data.spacing||{}).length],['components',Object.keys(data.components||{}).length],['markdown tables',tables.length]];document.getElementById('summary').innerHTML=summary.map(([label,count])=>'<span class="pill"><strong>'+count+'</strong>'+label+'</span>').join('');
+</script>
+<script>
+// ---- Inject palette as CSS custom properties so the demos below use real tokens ----
+(function injectVars(){
+  const colors=data.colors||{};
+  const resolve=(v)=>{const m=String(v).match(/^\{colors\.([^}]+)\}$/);return m&&colors[m[1]]?resolve(colors[m[1]]):v;};
+  Object.entries(colors).forEach(([name,value])=>{document.documentElement.style.setProperty('--'+name,resolve(value));});
+  const rounded=data.rounded||{};
+  Object.entries(rounded).forEach(([name,value])=>{document.documentElement.style.setProperty('--radius-'+name,String(value));});
+})();
+
+// ---- Gradient swatches ----
+(function gradientSwatches(){
+  const g=data.gradients||{};const el=document.getElementById('gradient-swatches');if(!el)return;
+  el.innerHTML=Object.entries(g).map(([name,value])=>
+    '<div class="grad-card"><div class="grad-swatch" style="background:'+escapeHtml(value)+'"></div>'+
+    '<div class="token-meta" style="padding:10px 12px"><div class="token-name">'+escapeHtml(name)+'</div></div></div>'
+  ).join('');
+})();
+
+// ---- Radius samples ----
+(function radiusSamples(){
+  const r=data.rounded||{};const el=document.getElementById('radius-samples');if(!el)return;
+  el.innerHTML=Object.entries(r).map(([name,value])=>
+    '<div class="radius-card"><div class="radius-box" style="border-radius:'+escapeHtml(value)+'"></div>'+
+    '<div class="radius-name">'+escapeHtml(name)+'</div><div class="radius-val">'+escapeHtml(value)+'</div></div>'
+  ).join('');
+})();
+
+// ---- Typography specimens + Tailwind scale + font weights ----
+(function typography(){
+  const t=data.typography||{};const el=document.getElementById('type-specimens');if(!el)return;
+  const sampleText='Nemo Video workspace';
+  el.innerHTML=Object.entries(t).map(([name,spec])=>{
+    const s=spec||{};const style='font-family:'+escapeHtml(s.fontFamily||'inherit')+';font-size:'+escapeHtml(s.fontSize||'16px')+';font-weight:'+escapeHtml(String(s.fontWeight||400))+';line-height:'+escapeHtml(String(s.lineHeight||1.5))+(s.letterSpacing?';letter-spacing:'+escapeHtml(s.letterSpacing):'');
+    const meta=[s.fontSize,s.fontWeight&&('w'+s.fontWeight),s.lineHeight&&('lh '+s.lineHeight),s.letterSpacing&&('ls '+s.letterSpacing)].filter(Boolean).join(' · ');
+    return '<div class="type-row"><span style="'+style+'">'+escapeHtml(name)+' — '+sampleText+'</span><span class="type-meta">'+escapeHtml(meta)+'</span></div>';
+  }).join('');
+
+  const scale=[['text-xs','12px','16px'],['text-sm','14px','20px'],['text-base','16px','24px'],['text-lg','18px','28px'],['text-xl','20px','28px'],['text-2xl','24px','32px'],['text-3xl','30px','36px'],['text-4xl','36px','40px'],['text-5xl','48px','48px']];
+  const scaleHtml='<div class="font-card"><div class="type-meta" style="margin:0 0 8px 0">Tailwind type scale (font-sans / Inter)</div>'+
+    scale.map(([n,fs,lh])=>'<div class="type-row"><span style="font-family:Inter,sans-serif;font-size:'+fs+';line-height:'+lh+';font-weight:500">'+n+' Ag</span><span class="type-meta">'+fs+' / '+lh+'</span></div>').join('')+'</div>';
+
+  const weights=[['300','Light'],['400','Regular'],['500','Medium'],['600','Semibold'],['700','Bold']];
+  const fontCard=(family,label)=>'<div class="font-card"><div class="type-meta" style="margin:0 0 4px 0">'+label+'</div>'+
+    '<p class="big" style="font-family:'+family+'">The quick brown fox 1234567890</p>'+
+    '<div class="font-weights">'+weights.map(([w,wl])=>'<span style="font-family:'+family+';font-weight:'+w+'">'+wl+' '+w+'</span>').join('')+'</div></div>';
+  document.getElementById('type-extras').innerHTML=scaleHtml+fontCard("Inter,sans-serif","font-sans — Inter")+fontCard("Outfit,Inter,sans-serif","font-outfit — Outfit");
+})();
+
+// ---- Component gallery ----
+(function gallery(){
+  const el=document.getElementById('previews-body');if(!el)return;
+  const stage=(label,inner,cap)=>'<div class="demo-block"><h3 class="group-title">'+label+'</h3><div class="demo-stage">'+inner+'</div>'+(cap?'<div class="demo-cap">'+cap+'</div>':'')+'</div>';
+  const blocks=[];
+
+  blocks.push(stage('Button — variants',
+    '<button class="btn btn-default">Default</button><button class="btn btn-secondary">Secondary</button><button class="btn btn-outline">Outline</button><button class="btn btn-ghost">Ghost</button><button class="btn btn-link">Link</button><button class="btn btn-default" disabled>Disabled</button>',
+    'variant=default|secondary|outline|ghost|link'));
+  blocks.push(stage('Button — semantic &amp; sizes',
+    '<button class="btn btn-success">Success</button><button class="btn btn-warning">Warning</button><button class="btn btn-info">Info</button><button class="btn btn-error">Error</button><button class="btn btn-default btn-sm">Small</button><button class="btn btn-default btn-lg">Large</button>',
+    'size=sm|default|lg'));
+  blocks.push(stage('Badge',
+    '<span class="badge badge-default">Default</span><span class="badge badge-secondary">Secondary</span><span class="badge badge-outline">Outline</span><span class="badge badge-destructive">Destructive</span><span class="badge badge-success">Success</span><span class="badge badge-warning">Warning</span><span class="badge badge-info">Info</span>'));
+  blocks.push(stage('Status dot',
+    '<span class="chip"><span class="dot" style="background:var(--success-7)"></span>Online</span><span class="chip"><span class="dot" style="background:var(--warning-7)"></span>Away</span><span class="chip"><span class="dot" style="background:var(--error-7)"></span>Error</span><span class="chip"><span class="dot" style="background:var(--gray-5)"></span>Offline</span>'));
+  blocks.push(stage('Input &amp; Textarea',
+    '<input class="inp" placeholder="Project name"/><input class="inp" value="With value"/><textarea class="ta" placeholder="Describe your scene…"></textarea>'));
+  blocks.push(stage('Checkbox / Radio / Switch',
+    '<span class="chip"><span class="cb on">✓</span>Checked</span><span class="chip"><span class="cb"></span>Unchecked</span><span class="chip"><span class="rd on"><i></i></span>Selected</span><span class="chip"><span class="rd"><i></i></span>Option</span><span class="chip"><span class="sw on"><i></i></span>On</span><span class="chip"><span class="sw"><i></i></span>Off</span>'));
+  blocks.push(stage('Slider / Progress',
+    '<div class="sl"><div class="rng"></div><div class="th"></div></div><div class="pg"><div class="bar" style="width:65%"></div></div>'));
+  blocks.push(stage('Tabs / Segmented',
+    '<div class="tabs"><span class="tab on">Edit</span><span class="tab">Preview</span><span class="tab">Export</span></div><div class="seg"><span class="on">Day</span><span>Week</span><span>Month</span></div>'));
+  blocks.push(stage('Avatar',
+    '<span class="av" style="width:44px;height:44px;font-size:16px">NV</span><span class="av" style="width:36px;height:36px;font-size:13px">AI</span><span class="av" style="width:28px;height:28px;font-size:11px">JY</span><span class="av" style="width:44px;height:44px;background:var(--brand-1);color:#fff">N</span>'));
+  blocks.push(stage('Tooltip / Kbd',
+    '<span class="tip">Rename project</span><span class="badge badge-outline" style="font-family:ui-monospace,monospace">⌘</span><span class="badge badge-outline" style="font-family:ui-monospace,monospace">⌘ K</span>'));
+  blocks.push(stage('Card',
+    '<div class="uicard"><h4>Scene 01</h4><p>A calm establishing shot of the city at dawn, camera slowly pushing in.</p><div style="margin-top:14px"><button class="btn btn-default btn-sm">Open</button></div></div>'));
+  blocks.push(stage('Alert — variants',
+    '<div class="alert"><i style="background:var(--info-5)"></i><div><b>Heads up</b><span>Your render is queued and will start shortly.</span></div></div>'+
+    '<div class="alert"><i style="background:var(--success-7)"></i><div><b>Success</b><span>Export finished — 1080p MP4 ready.</span></div></div>'+
+    '<div class="alert"><i style="background:var(--warning-7)"></i><div><b>Warning</b><span>Low credits remaining this month.</span></div></div>'+
+    '<div class="alert"><i style="background:var(--error-7)"></i><div><b>Error</b><span>Upload failed. Check your connection.</span></div></div>'));
+  blocks.push(stage('Skeleton / Spinner',
+    '<div style="display:flex;flex-direction:column;gap:8px"><div class="sk" style="width:220px;height:14px"></div><div class="sk" style="width:180px;height:14px"></div><div class="sk" style="width:120px;height:14px"></div></div><div class="spin"></div>'));
+  blocks.push(stage('Dialog / Modal',
+    '<div class="uicard" style="width:320px"><h4>Delete project?</h4><p>This action cannot be undone. The project and its scenes will be permanently removed.</p><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px"><button class="btn btn-outline btn-sm">Cancel</button><button class="btn btn-error btn-sm">Delete</button></div></div>'));
+  blocks.push(stage('Popover / Dropdown',
+    '<div class="uicard" style="width:200px;padding:6px"><div style="padding:8px 10px;border-radius:var(--radius-md);font-size:14px" onmouseover="this.style.background=\'var(--gray-3)\'" onmouseout="this.style.background=\'transparent\'">Duplicate</div><div style="padding:8px 10px;border-radius:var(--radius-md);font-size:14px">Rename</div><div style="padding:8px 10px;border-radius:var(--radius-md);font-size:14px;color:var(--error-7)">Delete</div></div>'));
+  blocks.push(stage('Seedance — top banner',
+    '<div style="width:100%;border-radius:var(--radius-lg);padding:10px 16px;color:#fff;font-size:13px;font-weight:600;background:'+escapeHtml((data.gradients||{})['seedance-ribbon']||'linear-gradient(90deg,#9e61ff,#619bff,#6c52ee)')+'">✦ Seedance is here — generate cinematic video from a single prompt</div>',
+    'gradients.seedance-ribbon'));
+  blocks.push(stage('Seedance — Discord pill',
+    '<span class="badge" style="background:'+escapeHtml((data.gradients||{})['seedance-discord-soft']||'rgba(158,97,255,.1)')+';color:#619bff;border:1px solid rgba(97,155,255,.3)">Join our Discord</span>',
+    'gradients.seedance-discord-soft'));
+  blocks.push(stage('PlanCard — Starter (most popular)',
+    '<div class="uicard" style="width:260px;position:relative;overflow:hidden;background:'+escapeHtml((data.gradients||{})['starter-light-card']||'linear-gradient(135deg,#E8F4FF,#D4ECFF)')+'"><div style="position:absolute;top:0;right:0;font-size:10px;font-weight:700;color:#04283a;padding:4px 10px;border-bottom-left-radius:8px;background:'+escapeHtml((data.gradients||{})['plan-progress-cyan']||'linear-gradient(90deg,#0AFFBE,#4EADF3)')+'">MOST POPULAR</div><h4>Starter</h4><p style="color:var(--text-2)">$12 / month</p><div style="margin-top:14px"><button class="btn btn-default btn-sm" style="width:100%">Choose plan</button></div></div>',
+    'gradients.starter-light-card · plan-progress-cyan'));
+  blocks.push(stage('TaskCard — selected',
+    '<div class="uicard" style="width:240px;box-shadow:0 0 0 2px var(--brand-1)"><div style="display:flex;gap:10px;align-items:center"><span class="av" style="width:32px;height:32px;font-size:12px;background:var(--brand-1);color:#fff">▶</span><div><b style="font-size:14px">Render scene 03</b><div style="font-size:12px;color:var(--text-3)">Processing · 65%</div></div></div><div class="pg" style="width:100%;margin-top:12px"><div class="bar" style="width:65%"></div></div></div>',
+    'ring-2 ring-brand-1 (selected)'));
+  blocks.push(stage('GlowBorder',
+    '<div style="padding:2px;border-radius:14px;background:'+escapeHtml((data.gradients||{})['glow-border-conic']||'conic-gradient(#67e8f9,#a78bfa,#22d3ee)')+'"><div style="background:var(--gray-1);border-radius:12px;padding:18px 22px;font-size:14px;font-weight:600">✨ AI Enhanced</div></div>',
+    'gradients.glow-border-conic'));
+
+  el.innerHTML=blocks.join('');
+})();
 </script>
 </body>
 </html>
