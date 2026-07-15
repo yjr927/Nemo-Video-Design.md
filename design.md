@@ -11,6 +11,19 @@ colors:
   brand-6: "hsl(217 100% 93%)"
   brand-7: "hsl(217 100% 97%)"
 
+  # [Target] Spot color. NOT the product primary. Only for 信息通知 / Highlight /
+  # Selected / Active / Focus / AI 强调. Equals website #7145FE ≈ hsl(254 98% 63%).
+  spot-purple: "#7145FE"
+  # [Target] Purple brand ramp. Same lightness steps as the blue brand-* ramp
+  # (60/63/65/75/87/93/97), hue/sat pinned to the #7145FE spot color.
+  brand-purple-1: "hsl(254 98% 60%)"
+  brand-purple-2: "hsl(254 98% 63%)"
+  brand-purple-3: "hsl(254 98% 65%)"
+  brand-purple-4: "hsl(254 98% 75%)"
+  brand-purple-5: "hsl(254 98% 87%)"
+  brand-purple-6: "hsl(254 98% 93%)"
+  brand-purple-7: "hsl(254 98% 97%)"
+
   text-1: "hsl(221 33% 11%)"
   text-2: "hsl(215 14% 34%)"
   text-3: "hsl(220 9% 46%)"
@@ -79,12 +92,16 @@ colors:
   foreground: "{colors.text-1}"
   border: "{colors.line-1}"
   input: "{colors.line-1}"
-  ring: "{colors.brand-1}"
+  # [Target] Focus ring is a controlled purple scenario -> spot color.
+  # [Deprecated] Was "{colors.brand-1}" (blue). Product code still ships blue; needs migration.
+  ring: "{colors.spot-purple}"
   card: "{colors.background}"
   card-foreground: "{colors.text-1}"
   popover: "{colors.background}"
   popover-foreground: "{colors.text-1}"
-  primary: "{colors.brand-1}"
+  # [Target] Default primary action is black/white/gray, NOT blue and NOT purple.
+  # [Deprecated] Was "{colors.brand-1}" (blue). Kept as inventory below.
+  primary: "{colors.gray-11}"
   primary-foreground: "{colors.gray-1}"
   secondary: "{colors.gray-3}"
   secondary-foreground: "{colors.text-1}"
@@ -92,8 +109,10 @@ colors:
   destructive-foreground: "{colors.gray-1}"
   muted: "{colors.gray-2}"
   muted-foreground: "{colors.text-3}"
-  accent: "{colors.brand-6}"
-  accent-foreground: "{colors.brand-1}"
+  # [Target] Highlight / Selected / Active surfaces are controlled purple scenarios.
+  # [Deprecated] Was brand-6 / brand-1 (blue). Product code still ships blue; needs migration.
+  accent: "{colors.brand-purple-6}"
+  accent-foreground: "{colors.brand-purple-1}"
 
   dark-brand-1: "hsl(217 100% 65%)"
   dark-brand-2: "hsl(217 100% 68%)"
@@ -177,6 +196,13 @@ colors:
   website-logo-magenta: "#AE62FF"
 
 gradients:
+  # [Target] Allowed gradient hues are blue / purple / black only. Each Target
+  # gradient is authored as a two-color pair: one opaque, one transparent, with the
+  # cross-blended color placed at the midpoint. Everything below the Target block is
+  # current-implementation inventory and is classified (Target / Temporary exception /
+  # Deprecated) in the "Gradients" prose section.
+  target-brand-opaque: "linear-gradient(135deg, #7145FE 0%, #101828 100%)"
+  target-brand-transparent: "linear-gradient(135deg, rgba(113,69,254,0.85) 0%, rgba(97,124,255,0.5) 50%, rgba(16,24,40,0) 100%)"
   product-brand: "linear-gradient(135deg, #3369ff 0%, #101828 100%)"
   shimmer-light: "linear-gradient(90deg, hsl(var(--gray-11)) 0%, hsl(var(--gray-11)) 40%, hsl(var(--gray-6)) 50%, hsl(var(--gray-11)) 60%, hsl(var(--gray-11)) 100%)"
   shimmer-dark: "linear-gradient(90deg, hsl(var(--gray-9)) 0%, hsl(var(--gray-9)) 40%, hsl(var(--gray-7)) 50%, hsl(var(--gray-9)) 60%, hsl(var(--gray-9)) 100%)"
@@ -187,7 +213,7 @@ gradients:
   dotted-background-light: "radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)"
   dotted-background-dark: "radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)"
   top-scroll-mask: "linear-gradient(to bottom, black, transparent)"
-  gallery-scroll-mask: "linear-gradient(to bottom, transparent 0px, black 48px)"
+  gallery-scroll-mask: "linear-gradient(to bottom, transparent 0px, black 100px)"
   ai-panel-light: "linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)"
   ai-panel-dark: "linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)"
   export-success-background: "linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)"
@@ -203,32 +229,35 @@ gradients:
   plan-pro-overlay: "linear-gradient(25.93deg, rgba(174, 98, 255, 0) 65.61%, rgba(174, 98, 255, 0.12) 98.99%)"
   plan-booster-overlay: "linear-gradient(25.93deg, rgba(229, 169, 19, 0) 65.61%, rgba(229, 169, 19, 0.12) 98.99%)"
   plan-progress-cyan: "linear-gradient(90deg, #0AFFBE 0%, #4EADF3 100%)"
-  website-logo: "linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)"
+  website-logo: "linear-gradient(90deg, #308DFF 0, #38ADFF 29%, #687CFF 56%, #6445FF 79%, #AE62FF 100%)"
   website-nav-light: "linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)"
   website-nav-dark: "linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)"
   website-modal-teal: "linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff"
   website-text-shimmer: "linear-gradient(90deg, var(--base-color) 0%, #7145FE 42%, #7145FE calc(50% - var(--spread)), #CD98FF calc(50% + var(--spread)), #CD98FF 58%, var(--base-color) 100%)"
   website-docs-text: "linear-gradient(90deg, #4B3F72 0%, #7B2FBE 50%, #A855F7 100%)"
 
+# [Target] Type roles: headings/display -> Outfit, body/UI text -> DM Sans, Inter is the
+# fallback for both. [Deprecated] Current product code still loads Inter for every role;
+# the fontFamily stacks below are Target and are marked "needs migration" in the Typography prose.
 typography:
   ui-body:
-    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontFamily: DM Sans, Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
     fontSize: 16px
     fontWeight: 400
     lineHeight: 1.5
   button-label:
-    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontFamily: DM Sans, Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
     fontSize: 14px
     fontWeight: 500
     lineHeight: 1
   card-title:
-    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontFamily: Outfit, Inter, -apple-system, BlinkMacSystemFont, sans-serif
     fontSize: 16px
     fontWeight: 600
     lineHeight: 1
     letterSpacing: -0.025em
   card-description:
-    fontFamily: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
+    fontFamily: DM Sans, Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif
     fontSize: 14px
     fontWeight: 400
     lineHeight: 1.5
@@ -238,17 +267,43 @@ typography:
     fontWeight: 700
     lineHeight: 1.1
 
+# [Target] Radius scale is a 4px-grid ramp. There is NO 6px token: the old md=6px is
+# removed and must not be reintroduced. Usage guide lives in the "Shapes" prose section.
+#   xs 4px  tracks / progress bars / small tags / small status blocks
+#   sm 8px  default buttons / inputs / dropdowns / small controls
+#   md 12px button-group wrappers / small popovers / compact cards
+#   lg 16px normal cards / media cards
+#   xl 20px large cards / drawer blocks
+#   2xl 24px modals / large panels / primary floating layers
+#   full   pill buttons / avatars / circular icon buttons
 rounded:
-  sm: 4px
-  md: 6px
-  lg: 8px
-  base: "0.5rem"
+  xs: 4px
+  sm: 8px
+  md: 12px
+  lg: 16px
+  xl: 20px
+  2xl: 24px
   full: "9999px"
 
+# [Target] Spacing is a 4px base grid: 0/4/8/12/16/20/24/32/40/48. Every spacing and
+# padding value must resolve to one of these tokens. The component-size tokens below
+# (button/icon heights) are current inventory and already land on the grid (36/40/44).
+# [Needs migration] card-header-gap was 6px (off-grid) -> now space-2 (8px).
 spacing:
+  space-0: "0"
+  space-1: 4px
+  space-2: 8px
+  space-3: 12px
+  space-4: 16px
+  space-5: 20px
+  space-6: 24px
+  space-8: 32px
+  space-10: 40px
+  space-12: 48px
   base: 4px
-  card-padding: 24px
-  card-header-gap: 6px
+  card-padding: "{spacing.space-4}"
+  modal-padding: "{spacing.space-6}"
+  card-header-gap: "{spacing.space-2}"
   button-sm-height: 36px
   button-default-height: 40px
   button-lg-height: 44px
@@ -261,56 +316,56 @@ components:
     backgroundColor: "{colors.gray-11}"
     textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-outline:
     backgroundColor: "{colors.background}"
     textColor: "{colors.gray-11}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-secondary:
     backgroundColor: "{colors.secondary}"
     textColor: "{colors.secondary-foreground}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-success:
     backgroundColor: "{colors.success-7}"
     textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-warning:
     backgroundColor: "{colors.warning-7}"
     textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-info:
     backgroundColor: "{colors.info-5}"
     textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-error:
     backgroundColor: "{colors.error-7}"
     textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   input:
     backgroundColor: "{colors.background}"
     textColor: "{colors.text-1}"
     typography: "{typography.card-description}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
     height: 36px
     padding: "4px 12px"
   card:
@@ -322,21 +377,28 @@ components:
     backgroundColor: "{colors.gray-11}"
     textColor: "#FFFFFF"
     typography: "{typography.card-description}"
-    rounded: "{rounded.md}"
-    padding: "2px 10px"
+    # [Target] Small tag -> radius-xs (4px). [Needs migration] Was rounded.md (6px).
+    rounded: "{rounded.xs}"
+    # [Target] On-grid padding = space-1 space-3. [Needs migration] Was "2px 10px" (off-grid).
+    padding: "4px 12px"
 ---
 
 # NemoVideo DESIGN.md
 
 ## Overview
 
-This file now follows the current Nemo Video codebase exactly. The normative source is:
+This document is organized in **three layers**, and every rule below is tagged with which layer it belongs to:
 
-- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/styles/globals.css`
-- `/Users/yangjinru/Desktop/Nemo Video/packages/design/tailwind.config.js`
-- `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/components/ui/*`
+1. **Current implementation inventory** — the exact tokens shipping in the codebase today. Normative source:
+   - `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/styles/globals.css`
+   - `/Users/yangjinru/Desktop/Nemo Video/packages/design/tailwind.config.js`
+   - `/Users/yangjinru/Desktop/Nemo Video/packages/design/src/components/ui/*`
+2. **Target design rules** — the direction all *new* design and code must follow. These are marked **[Target]** in the frontmatter comments and in prose. Where a Target rule conflicts with the current code, the frontmatter token has already been repointed to the Target value and the old value is preserved as inventory.
+3. **Migration guidance** — how the current inventory moves to Target, with each conflicting item tagged **Deprecated**, **Temporary exception**, **Needs migration**, or **Needs audit**. See the "Deprecation & Migration Ledger" section.
 
-The product UI design system is `@nemo/design`: a shadcn/Radix/Tailwind component library with CSS variables, class-based dark mode, Inter as the default UI font, and an Untitled-UI-style gray/status palette.
+**Layer precedence:** when inventory and Target disagree, *future* work follows **Target**. This round only edits the design docs and the static preview; no product source code is changed yet. So the inventory tables still describe what renders in production until the migration lands.
+
+The product UI design system is `@nemo/design`: a shadcn/Radix/Tailwind component library with CSS variables and class-based dark mode. **[Target]** the product body is **black / white / gray** (AntDesign-style neutral scale); `#7145FE` purple is a **spot color**, not the primary, and is used only in controlled scenarios (信息通知 / Highlight / Selected / Active / Focus / AI 强调). **[Inventory]** the code today still ships a blue `brand-*` ramp as its accent; that ramp is kept below and marked for migration.
 
 The website app also has a marketing layer with `brand1-*` RGB variables, logo gradients, and `#7145FE` purple accents. Those are documented as website-layer tokens, but they are not the core product UI palette.
 
@@ -387,7 +449,19 @@ Gray scale is exactly the `@nemo/design` Untitled UI blue-gray ramp:
 | `--gray-10` | `215 25% 17%` | `#1D2939` |
 | `--gray-11` | `221 33% 11%` | `#101828` |
 
-Status colors follow the full `success-*`, `warning-*`, and `error-*` ramps in `globals.css`. The default Tailwind semantic mappings are `success` -> `success-7`, `warning` -> `warning-7`, `error/destructive` -> `error-7`, and `info` -> `info-5`.
+Status colors follow the full `success-*`, `warning-*`, and `error-*` ramps in `globals.css`. The default Tailwind semantic mappings are `success` -> `success-7`, `warning` -> `warning-7`, `error/destructive` -> `error-7`, and `info` -> `info-5`. **[Inventory]** these full colored ramps stay in the file; **[Target]** they are no longer the *default* fill for status components (see "Status Expression Target").
+
+### Color System Target
+
+This is the rule set new design and code must follow. It changes what the semantic aliases point to; it does not delete the inventory ramps.
+
+- **Product body is black / white / gray.** The default/primary action is neutral: `primary -> gray-11`, `primary-foreground -> gray-1`. The shipped `button-default` (`bg-gray-11 text-gray-1`) is already correct and needs no migration.
+- **`#7145FE` is a spot color, not the primary.** It is exposed as `spot-purple` and a 7-step `brand-purple-*` ramp (same lightness steps as the blue ramp: 60/63/65/75/87/93/97; hue/sat pinned to `#7145FE`). Purple is allowed **only** in these controlled scenarios:
+  - 信息通知 (info notifications) · Highlight · Selected · Active · Focus · AI 强调 (AI emphasis).
+  - Target aliases already repointed: `ring -> spot-purple` (focus), `accent -> brand-purple-6`, `accent-foreground -> brand-purple-1` (highlight/selected/active surfaces).
+- **The blue `brand-1..7` ramp is [Deprecated] as an accent/primary.** It stays as inventory because product code still renders it, but new work must not use blue as brand/primary/focus/selected. Migrate blue accents to `brand-purple-*` (or neutral) case by case.
+- **Error / Warning / Success default to a gray/white/black expression** (see "Status Expression Target"). The colored `success-*` / `warning-*` / `error-*` ramps remain available for the *icon or text accent* only, not for a full colored component background by default.
+- **No new non-blue/purple/black gradients** may be added; existing off-palette gradients are classified in the "Gradients" section.
 
 ### Product Dark Theme
 
@@ -447,6 +521,20 @@ Dark status ramps are also defined explicitly in `globals.css`, not generated at
 
 Gradients are part of the codebase visual system and must be documented with direction, stops, and source layer. Repeated uses of the same gradient are documented once. Gradients from proposals, docs-only examples, generated SEO HTML data, and Storybook-only demos are not normative.
 
+### Gradient Classification (Target)
+
+**[Target]** Allowed gradient hues are **blue / purple / black only**, and a Target gradient is authored as a **two-color pair** — one opaque stop and one transparent stop, with the cross-blended color at the midpoint (`target-brand-opaque`, `target-brand-transparent` in the frontmatter). No new gradient outside the blue/purple/black family may be added.
+
+Every current-inventory gradient below is classified:
+
+| Class | Meaning | Tokens |
+|---|---|---|
+| **Target-aligned** | Already blue/purple/black; keep | `product-brand`, `shimmer-light`, `shimmer-dark`, `video-controls-overlay`, `think-shine`, `top-scroll-mask`, `gallery-scroll-mask`, `pro-dark-card`, `pro-purple-card`, `website-logo`, `website-text-shimmer`, `website-docs-text`, `website-nav-dark` |
+| **Temporary exception** | Off-palette but kept for now; do not extend | `plan-free-overlay`, `plan-starter-overlay`, `plan-pro-overlay`, `plan-booster-overlay`, `plan-progress-cyan`, `starter-light-card`, `success-light-card`, `export-success-background`, `seedance-ribbon`, `seedance-discord-text`, `seedance-discord-soft`, `ai-panel-light`, `ai-panel-dark`, `website-modal-teal`, `mobile-upload-background`, `glow-border-conic` |
+| **Deprecated** | Remove from new work | `dotted-background-light`, `dotted-background-dark` (dotted canvas → use a solid color, or an approved Figma texture asset if one can be imported; never invent a texture path), `website-nav-light` |
+
+Member plan colors (Free / Starter / Pro / Business) stay as-is per the Target brief; the plan-* overlays above are the Temporary-exception form of that decision.
+
 ### Product Design Gradients
 
 | Token | Gradient | Source / usage |
@@ -463,10 +551,10 @@ Gradients are part of the codebase visual system and must be documented with dir
 | Token | Gradient | Source / usage |
 |---|---|---|
 | `mobile-upload-background` | `linear-gradient(to bottom, hsl(var(--gray-1)) 0%, hsl(var(--info-2)) 100%)` | mobile upload page background |
-| `dotted-background-light` | `radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in light mode |
-| `dotted-background-dark` | `radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)` with `background-size: 16px 16px` | workspace/task/API page dotted background in dark mode |
+| `dotted-background-light` | `radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)` with `background-size: 16px 16px` | **[Deprecated]** workspace/task/API dotted background (light). Target: solid color, or an approved Figma texture if importable — do not fabricate a texture path |
+| `dotted-background-dark` | `radial-gradient(hsl(var(--gray-3)) 1px, transparent 1px)` with `background-size: 16px 16px` | **[Deprecated]** workspace/task/API dotted background (dark). Same migration as above |
 | `top-scroll-mask` | `linear-gradient(to bottom, black, transparent)` | workspace top mask and fade overlays |
-| `gallery-scroll-mask` | `linear-gradient(to bottom, transparent 0px, black 48px)` | task gallery scroll mask; 48px equals `GALLERY_SCROLL_MASK_FADE_LENGTH_PX` |
+| `gallery-scroll-mask` | `linear-gradient(to bottom, transparent 0px, black 100px)` | task gallery scroll mask; 100px equals `GALLERY_SCROLL_MASK_FADE_LENGTH_PX` |
 | `ai-panel-light` | `linear-gradient(180deg, rgba(91, 238, 222, 0.3) 0%, rgba(152, 219, 255, 0.2) 8%, transparent 25%)` | task AI panel background in light mode |
 | `ai-panel-dark` | `linear-gradient(180deg, rgba(91, 238, 222, 0.15) 0%, rgba(152, 219, 255, 0.1) 8%, transparent 25%)` | task AI panel background in dark mode |
 | `export-success-background` | `linear-gradient(180deg, #FFFFFF 0%, #E8FFF0 100%)` | export modal success surface |
@@ -487,7 +575,7 @@ Gradients are part of the codebase visual system and must be documented with dir
 
 | Token | Gradient | Source / usage |
 |---|---|---|
-| `website-logo` | `linear-gradient(90deg, #308DFF 0%, #38ADFF 25%, #687CFF 50%, #6445FF 75%, #AE62FF 100%)` | website logo/brand mark gradient stops |
+| `website-logo` | `linear-gradient(90deg, #308DFF 0, #38ADFF 29%, #687CFF 56%, #6445FF 79%, #AE62FF 100%)` | website logo/brand mark gradient stops |
 | `website-nav-light` | `linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 115.72%)` | `apps/nemovideo-website/src/app/globals.css` `.nemo-home-nav` |
 | `website-nav-dark` | `linear-gradient(180deg, rgba(30, 30, 50, 0.9) 0%, rgba(15, 15, 30, 0.95) 100%)` | Seedance dark navbar override |
 | `website-modal-teal` | `linear-gradient(190.72deg, rgba(91, 238, 222, 0) 53.35%, rgba(91, 238, 222, 0.2) 103.33%), #ffffff` | website mobile/PC auth modal surfaces |
@@ -496,12 +584,20 @@ Gradients are part of the codebase visual system and must be documented with dir
 
 ## Typography
 
-The product UI font family is defined in `packages/design/tailwind.config.js`:
+**[Inventory]** The product UI font family currently defined in `packages/design/tailwind.config.js`:
 
 - `font-sans`: `Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif`
 - `font-outfit`: `Outfit, Inter, -apple-system, BlinkMacSystemFont, sans-serif`
 
 The app imports Inter and Outfit in `apps/nemovideo/src/index.css`. Button text uses `text-sm font-medium`. Card titles use `font-semibold leading-none tracking-tight`. Card descriptions use `text-sm text-text-3`.
+
+**[Target] Type roles:**
+
+- **Headings / display → Outfit.** `card-title` and `outfit-display` frontmatter tokens are already on Outfit.
+- **Body / UI text → DM Sans.** `ui-body`, `button-label`, and `card-description` frontmatter stacks are already `DM Sans, Inter, …`.
+- **Inter is the fallback** for both roles (first fallback after the primary family).
+
+**[Needs migration]** Product code still loads Inter for every role. To land Target, add DM Sans to the font pipeline (`@import`/`@font-face` + `font-sans` stack) and switch heading elements to `font-outfit`. Until then the inventory still renders Inter.
 
 ## Layout
 
@@ -515,12 +611,43 @@ Spacing and sizing come from Tailwind plus `packages/design/src/lib/sizes.ts`:
 - Avatar: `sm h-8 w-8`, `default h-10 w-10`, `lg h-12 w-12`, `xl h-16 w-16`, `2xl h-20 w-20`.
 - Status dot: `sm h-2 w-2`, `default h-3 w-3`, `lg h-4 w-4`, `xl h-5 w-5`, `2xl h-6 w-6`.
 
+### Spacing & Padding (Target)
+
+**[Target]** All spacing and padding resolves to the 4px base grid — `space-0..space-12` = `0 / 4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48`. Common gaps:
+
+| Value | Token | Use for |
+|---:|---|---|
+| 4px | `space-1` | icon↔text, tightly-coupled small elements |
+| 8px | `space-2` | button groups, inside a form |
+| 12px | `space-3` | small groupings inside a card |
+| 16px | `space-4` | default component inner padding, card content spacing |
+| 20px | `space-5` | roomier cards, media-preview control areas |
+| 24px | `space-6` | Modal content area |
+| 32px+ | `space-8`+ | between page modules |
+
+**[Target] Padding references the same spacing tokens** (no ad-hoc pixel padding):
+
+| Element | Padding | Tokens |
+|---|---|---|
+| Small control | 4px / 8px | `space-1` / `space-2` |
+| Normal button | 8px block, 12px inline | `space-2` / `space-3` |
+| Large button | 12px block, 16px inline | `space-3` / `space-4` |
+| Input | 4–8px block, 12px inline | `space-1`–`space-2` / `space-3` |
+| Compact card | 12px | `space-3` |
+| Normal card | 16px | `space-4` (`card-padding`) |
+| Large card | 20px | `space-5` |
+| Modal | 24px | `space-6` (`modal-padding`) |
+
+Buttons use `padding-block: 8px` with `padding-inline: 12px` or `16px`. Only icon buttons, square buttons, and media-overlay control buttons use an equal all-sides padding. Video-preview containers use a uniform inset on all four edges: compact 12px / default 16px / roomy 20px.
+
+**[Needs migration]** `card-header-gap` was 6px (off-grid) and is repointed to `space-2` (8px). Any remaining off-grid spacing in product code is a migration item.
+
 ### Product App UI Alignment
 
 The current Nemo Video product UI is a compact editor/workspace surface, not a marketing landing page. Documentation previews and handoff examples should reflect that product shape:
 
 - Use a full application canvas with left navigation, a central workspace/media area, and right-side task/history/material panels when showing product UI examples.
-- Keep controls dense and operational: `h-9` inputs, `h-10` default buttons, `text-sm` labels, `text-xs` metadata, 8px maximum card radius from `rounded-lg`.
+- Keep controls dense and operational: `h-9` inputs, `h-10` default buttons, `text-sm` labels, `text-xs` metadata. **[Target]** radius follows the 4px-grid scale: 8px (`rounded.sm`) for buttons/inputs, 16px (`rounded.lg`) for normal cards, up to 24px (`rounded.2xl`) for modals. **[Inventory note]** older components still ship 6px/8px surfaces; those are tracked for migration, not a cap on new work.
 - Use `bg-background`, `bg-card`, `bg-gray-1`, `border-line-1`, and restrained shadows for panels. Avoid oversized hero typography, decorative card stacks, or broad marketing gradients in product workspace examples.
 - Product feature previews such as brush editing, assets, generated versions, and edited history should look like tool panels inside the workspace, not website sections.
 
@@ -537,15 +664,57 @@ The code also defines `.bg-gradient-brand` as `linear-gradient(135deg, #3369ff 0
 
 ## Shapes
 
-The base radius is exact code: `--radius: 0.5rem`.
+**[Inventory]** Product code today derives radius from `--radius: 0.5rem` with `rounded-lg = var(--radius)` (8px), `rounded-md = calc(-2px)` (6px), `rounded-sm = calc(-4px)` (4px). **[Deprecated]** the 6px `rounded-md` value and the `calc()` derivation are being replaced by the Target scale below. Do not reintroduce 6px.
 
-Tailwind radius mapping:
+### Radius Scale (Target)
 
-- `rounded-lg`: `var(--radius)`
-- `rounded-md`: `calc(var(--radius) - 2px)`
-- `rounded-sm`: `calc(var(--radius) - 4px)`
+A fixed 4px-grid ramp. There is no 6px token.
 
-Button, Input, Badge, Card, Alert, and related primitives use these shared radius tokens. Do not replace them with arbitrary pixel values unless the component code does so explicitly.
+| Token | Value | Use for |
+|---|---:|---|
+| `rounded.xs` | 4px | tracks, progress bars, small tags, small status blocks |
+| `rounded.sm` | 8px | **default buttons, inputs, dropdowns**, small controls |
+| `rounded.md` | 12px | button-group wrapper containers, small popovers, compact cards |
+| `rounded.lg` | 16px | normal cards, media cards |
+| `rounded.xl` | 20px | large cards, drawer blocks |
+| `rounded.2xl` | 24px | modals, large panels, primary floating layers |
+| `rounded.full` | 9999px | pill buttons, avatars, circular icon buttons |
+
+Button, Input, Badge, Card, Alert, and related primitives reference these shared tokens. Do not use arbitrary pixel radii.
+
+**[Migration guard]** Do not blindly global-replace existing 6px radii. Before changing a legacy 6px surface, check (1) whether it is a *nested* radius whose value is derived from an outer/inner relationship (see below), and (2) whether the change shifts layout. Migrate per-component, not with a global find/replace.
+
+### Nested Radius (Target)
+
+When an inner element sits inside a rounded outer container and the two arcs should read as **concentric**, the outer radius is derived from the inner radius plus the gap between them:
+
+```
+outer_radius = inner_radius + gap
+```
+
+**Applies only when** all of these hold: the two radii curve in the same direction, the inner element hugs the outer edge, the gap is uniform on the concentric sides, and a concentric arc is actually intended.
+
+**Does not apply when** the inner element is centered with large/uneven margins, the layers do not share an edge, or no concentric relationship is intended — in those cases pick radii independently from the scale.
+
+Worked example with a default 8px inner control:
+
+| Gap (inner→outer) | Outer radius |
+|---:|---:|
+| 4px | 12px (`rounded.md`) |
+| 8px | 16px (`rounded.lg`) |
+| 12px | 20px (`rounded.xl`) |
+| 16px | 24px (`rounded.2xl`) |
+
+Only at a 4px gap do inner and outer stay a fixed 4px apart; at larger gaps the outer radius grows by the full gap.
+
+## Stroke
+
+**[Target]** Border/stroke widths use three visual steps, largest to smallest: **1px → 0.75px → 0.25px**. Stroke *color* is intentionally left unspecified for now (to be standardized later).
+
+**Visual value vs front-end-implementable value.** The 0.75px and 0.25px steps are *design/visual* values. Browsers cannot reliably render sub-pixel borders — at most display densities they snap to 0 or 1 device pixel and behave inconsistently across zoom levels and DPRs. So:
+
+- **Implementable today:** `1px` for a normal hairline border.
+- **Visual-only (needs a technique):** `0.75px` / `0.25px` must be approximated (e.g. a `transform: scale()` on a 1px border, a background-gradient hairline, or an inset box-shadow) rather than written directly as `border-width: 0.75px` and assumed pixel-accurate. Treat them as design intent, and record the actual implemented technique when they ship.
 
 ## Components
 
@@ -682,6 +851,21 @@ All wrap the shared `Dialog` primitive unless noted.
 
 > Files that look like components but are not: the root `UpgradeModal.tsx`, `VideoUploadPanel.tsx`, and `UserCard.tsx` in nemovideo-business are re-export shims for the real implementations; there is no `SeedanceBanner/` directory or `Seedance2TopBanner.constants.ts` file. Document behavior from the real source modules, not the shims.
 
+### Status Expression Target
+
+**[Target]** Error / Warning / Success (and Info) default to a **gray / white / black** expression, not a full colored fill. The reference pattern is the shipped `Alert`, which **only tints the leading icon** and keeps the surface neutral. Reserve the `success-*` / `warning-*` / `error-*` / `info-*` ramps for that icon (or a short text accent), and use `#7145FE` purple for info-notification / highlight states per the color rules.
+
+**[Needs migration]** the solid colored status *buttons* below are current inventory that conflicts with this rule:
+
+| Component token | Current (inventory) | Target expression |
+|---|---|---|
+| `button-success` | `bg-success-7 text-gray-1` (green fill) | neutral surface; success color on icon/text only |
+| `button-warning` | `bg-warning-7 text-gray-1` (orange fill) | neutral surface; warning color on icon/text only |
+| `button-info` | `bg-info-5 text-gray-1` (blue fill) | neutral or purple-highlight surface; info color on icon/text only |
+| `button-error` | `bg-error-7 text-gray-1` (red fill) | neutral surface; error color on icon/text only |
+
+`destructive` (delete confirmation) may keep a red emphasis as a deliberate destructive affordance, but that is an explicit exception, not the default status style. These tokens are left in the frontmatter as inventory and must be migrated in `packages/design/src/components/ui/button/buttonVariants.ts`, not silently rewritten here.
+
 ### Contrast Notes
 
 The current implementation uses `text-gray-1` on solid status button backgrounds. Keep this document aligned with code. If the team decides to adjust status-button contrast targets later, that should be tracked as a product accessibility change in `packages/design/src/components/ui/button/buttonVariants.ts`, not silently changed in the design document first.
@@ -695,13 +879,40 @@ The current implementation uses `text-gray-1` on solid status button backgrounds
 
 ## Do's and Don'ts
 
-- Do use `@nemo/design/styles` and `@nemo/design/tailwind` as the source of truth for product UI.
-- Do reference colors through Tailwind classes such as `bg-brand-1`, `text-text-1`, `border-line-1`, `bg-background`, and `text-foreground`.
+- Do treat this document in three layers: current inventory, **[Target]** rules, and migration. New design/code follows **Target**; production still renders inventory until migration lands.
+- Do use `@nemo/design/styles` and `@nemo/design/tailwind` as the implementation source of truth for the *current* product UI.
+- Do keep the product body **black / white / gray**; use `#7145FE` purple only for 信息通知 / Highlight / Selected / Active / Focus / AI 强调.
+- Do use the 4px-grid radius scale (`xs4 / sm8 / md12 / lg16 / xl20 / 2xl24 / full`) and the 4px spacing grid (`space-0..space-12`); reference spacing tokens for padding.
 - Do keep dark mode as `.dark` class switching through `ThemeProvider`.
 - Do use the website layer tokens only for `apps/nemovideo-website`.
 - Do document product UI examples as compact workspace/editor surfaces rather than marketing pages.
-- Do keep solid status button text as `gray-1` while the component implementation uses `text-gray-1`.
-- Don't use the Figma `#165DFF` primary as product UI primary; the code primary is `--brand-1: 217 100% 60%`.
+- **Don't add a 6px radius** or reintroduce the old `rounded-md = 6px`; 6px is not a usable token in the Target scale.
+- **Don't use blue `brand-1` as the new primary/focus/selected color.** Neutral is primary; purple is the controlled accent.
+- **Don't let red / yellow / green remain the default filled background of status components.** Default to the gray/white/black expression; color the icon/text only.
+- **Don't keep the dotted background as a recommended surface.** Use a solid color, or an approved Figma texture if it can actually be imported — never fabricate a texture path.
+- **Don't add new gradients outside the blue/purple/black family.** Two-color (opaque + transparent) form only.
 - Don't rewrite HSL channel values into approximate hex values in implementation docs.
 - Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.
 - Don't invent new component variants when `Button`, `Badge`, `Card`, `Input`, and `Alert` already define the variants in code.
+- Don't silently delete the old implementation tokens; keep them as inventory and mark them Deprecated / Temporary exception / Needs migration / Needs audit.
+
+## Deprecation & Migration Ledger
+
+Every conflict between the current inventory and the Target rules, and its migration status.
+
+| Item | Inventory (current) | Target | Status | Migration action |
+|---|---|---|---|---|
+| Radius `md` | 6px | 12px | **Deprecated** | remove 6px; migrate per-component, checking nested-radius history and layout impact |
+| Radius `base` / `calc()` derivation | `--radius:0.5rem` + `calc()` | fixed 4px-grid tokens | **Deprecated** | replace derivation with the `xs..2xl` scale |
+| Primary color | `primary → brand-1` (blue) | `primary → gray-11` (neutral) | **Repointed / Needs audit** | audit product surfaces that read `--primary` as blue |
+| Focus ring | `ring → brand-1` (blue) | `ring → spot-purple` | **Needs migration** | switch focus rings to purple in component code |
+| Highlight/Selected | `accent → brand-6` (blue) | `accent → brand-purple-6` | **Needs migration** | switch selected/active surfaces to purple |
+| Blue `brand-1..7` ramp | shipped as accent | purple `brand-purple-*` / neutral | **Deprecated (as accent)** | migrate blue accents case by case |
+| Status buttons | colored fills | gray/white/black + icon accent | **Needs migration** | update `buttonVariants.ts` |
+| Typography | Inter everywhere | Outfit titles / DM Sans body | **Needs migration** | add DM Sans, move headings to Outfit |
+| `card-header-gap` | 6px (off-grid) | `space-2` (8px) | **Needs migration** | repoint in component code |
+| Badge radius/padding | 6px / `2px 10px` | 4px / `4px 12px` | **Needs migration** | on-grid values |
+| Dotted background | `dotted-background-*` | solid / approved texture | **Deprecated** | replace canvas background |
+| Plan/member gradients | `plan-*`, plan cards | off-palette | **Temporary exception** | keep; do not extend |
+| Seedance / teal / cyan gradients | `seedance-*`, `ai-panel-*`, `website-modal-teal` | off-palette | **Temporary exception** | keep; do not extend |
+| Figma texture assets | none imported | approved Figma texture | **Needs audit** | confirm an importable asset exists before use; otherwise solid color |
