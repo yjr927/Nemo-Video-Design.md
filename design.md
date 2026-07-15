@@ -280,28 +280,28 @@ components:
     padding: "8px 16px"
   button-success:
     backgroundColor: "{colors.success-7}"
-    textColor: "{colors.gray-11}"
+    textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-warning:
     backgroundColor: "{colors.warning-7}"
-    textColor: "{colors.gray-11}"
+    textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-info:
     backgroundColor: "{colors.info-5}"
-    textColor: "{colors.gray-11}"
+    textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
     padding: "8px 16px"
   button-error:
     backgroundColor: "{colors.error-7}"
-    textColor: "{colors.gray-11}"
+    textColor: "{colors.gray-1}"
     typography: "{typography.button-label}"
     rounded: "{rounded.md}"
     height: "{spacing.button-default-height}"
@@ -515,6 +515,15 @@ Spacing and sizing come from Tailwind plus `packages/design/src/lib/sizes.ts`:
 - Avatar: `sm h-8 w-8`, `default h-10 w-10`, `lg h-12 w-12`, `xl h-16 w-16`, `2xl h-20 w-20`.
 - Status dot: `sm h-2 w-2`, `default h-3 w-3`, `lg h-4 w-4`, `xl h-5 w-5`, `2xl h-6 w-6`.
 
+### Product App UI Alignment
+
+The current Nemo Video product UI is a compact editor/workspace surface, not a marketing landing page. Documentation previews and handoff examples should reflect that product shape:
+
+- Use a full application canvas with left navigation, a central workspace/media area, and right-side task/history/material panels when showing product UI examples.
+- Keep controls dense and operational: `h-9` inputs, `h-10` default buttons, `text-sm` labels, `text-xs` metadata, 8px maximum card radius from `rounded-lg`.
+- Use `bg-background`, `bg-card`, `bg-gray-1`, `border-line-1`, and restrained shadows for panels. Avoid oversized hero typography, decorative card stacks, or broad marketing gradients in product workspace examples.
+- Product feature previews such as brush editing, assets, generated versions, and edited history should look like tool panels inside the workspace, not website sections.
+
 ## Elevation & Depth
 
 Depth follows Tailwind/shadcn defaults in the component classes:
@@ -556,16 +565,133 @@ Button, Input, Badge, Card, Alert, and related primitives use these shared radiu
 
 Use the exported component variants instead of creating new variant names. If a page needs marketing-specific purple (`#7145FE`), keep that in the website layer; do not feed it back into `@nemo/design` product primitives.
 
-### WCAG AA Component Targets
+The rest of this section is a complete inventory of the shipped components. It is grouped into `@nemo/design` primitives (Overlays & Popups, Form Controls, Data Display, Feedback) and composite product components (Banners, Modals & Dialogs, Cards, Dropdowns & Notifications, Panels & Navigation, Effects). Class strings are copied from the component source; primitives are mostly Radix UI, except Drawer (`vaul`) and toast (`sonner`).
 
-The current implementation uses `text-gray-1` on status button backgrounds. The `DESIGN.md` component tokens intentionally set status button text to `gray-11` so the documented target reaches WCAG AA contrast without changing the current status background tokens:
+### Primitives — Overlays & Popups
 
-| Component token | Background | AA text color | Contrast target |
+All modal-type overlays share a Radix `Overlay` of `fixed inset-0 z-50 bg-black/80` with `data-[state=open]:animate-in / data-[state=closed]:animate-out` fade, and a centered `Content` that adds zoom + slide animation.
+
+| Component | Primitive | Key classes |
+|---|---|---|
+| `Dialog` | Radix Dialog | Content `fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg sm:rounded-lg max-h-[90vh]`; close button has `circle` (`rounded-full`) and `square` (`rounded-sm`) shape variants, `opacity-70 hover:opacity-100` |
+| `AlertDialog` | Radix AlertDialog | Same Content geometry as Dialog; footer `flex-col-reverse sm:flex-row sm:justify-end`; actions reuse `buttonVariants` (default action + `outline` cancel); optional leading status icon sized via `alertDialogIconSizeClasses` |
+| `Drawer` | `vaul` | Content `fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background`; drag handle `mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted` |
+| `Sheet` | Radix Dialog | CVA `side` variants: `top`/`bottom` full-width slide, `left`/`right` `h-full w-3/4 sm:max-w-sm` slide; `bg-background p-6 shadow-lg` |
+| `Popover` | Radix Popover | Content `z-50 w-72 rounded-md border border-gray-4 bg-popover p-4 text-popover-foreground shadow-md` with zoom/slide-by-side animation |
+| `DropdownMenu` | Radix DropdownMenu | Content `z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 shadow-md`; item `rounded-sm px-2 py-1.5 text-sm focus:bg-accent focus:text-accent-foreground`; supports inset, sub-menu, checkbox/radio items, `DropdownMenuShortcut` |
+| `ContextMenu` | Radix ContextMenu | Same content/item styling as DropdownMenu, triggered on right-click |
+| `Select` | Radix Select | Trigger `flex h-9 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm`; Content `rounded-md border bg-popover shadow-md`; item `py-1.5 pl-8 pr-2` with check indicator |
+| `Tooltip` | Radix Tooltip | Content `z-50 overflow-hidden rounded-md bg-gray-11 dark:bg-gray-2 px-3 py-1.5 text-xs text-gray-1 dark:text-gray-11 shadow-md` |
+| `HoverCard` | Radix HoverCard | Content `z-50 w-64 rounded-md border bg-popover p-4 shadow-md`; used for WeChat QR and user previews |
+| `Toast` (`Sonner`) | `sonner` | `<Toaster>` themed via `toast group`, `group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg`; description `text-muted-foreground` |
+
+### Primitives — Form Controls
+
+| Component | Key classes |
+|---|---|
+| `Input` | `flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm placeholder:text-text-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-1 disabled:opacity-50` |
+| `Textarea` | `flex min-h-[60px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm placeholder:text-text-3 focus-visible:ring-1 focus-visible:ring-brand-1` |
+| `Label` | `text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70` |
+| `Checkbox` | `h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:ring-1 focus-visible:ring-ring data-[state=checked]:bg-brand-1 data-[state=checked]:text-primary-foreground` |
+| `RadioGroup` | Item `aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow`; indicator is a centered filled dot |
+| `Switch` | Root `peer inline-flex h-5 w-9 shrink-0 rounded-full data-[state=checked]:bg-primary data-[state=unchecked]:bg-input`; thumb `h-4 w-4 rounded-full bg-background data-[state=checked]:translate-x-4` |
+| `Slider` | Three CVA size maps — track `h-1.5/h-2/h-3 rounded-full bg-secondary`, range `bg-primary`, thumb `h-4 w-4 rounded-full border border-primary/50 bg-background shadow` |
+| `Toggle` | Base `inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-muted data-[state=on]:bg-accent data-[state=on]:text-accent-foreground`; `default` + `outline` variants; sizes via `toggleSizeClasses` |
+| `OtpInput` | Per-cell `w-14 h-16 rounded-xl border text-2xl text-center`, active cell adds `ring-2 ring-brand-1` |
+
+### Primitives — Data Display
+
+| Component | Key classes |
+|---|---|
+| `Avatar` | Root `relative flex shrink-0 overflow-hidden rounded-full` sized via `avatarSizeClasses` (sm `h-8 w-8` → 2xl `h-20 w-20`); fallback `flex h-full w-full items-center justify-center rounded-full bg-muted` |
+| `Table` | Wrapper `relative w-full overflow-auto`; `table w-full caption-bottom text-sm`; row `border-b hover:bg-muted/50 data-[state=selected]:bg-muted`; head `h-10 px-2 text-left align-middle font-medium text-muted-foreground` |
+| `Accordion` | Item `border-b`; trigger `flex flex-1 items-center justify-between py-4 text-sm font-medium [&[data-state=open]>svg]:rotate-180`; content uses `accordion-up/down` keyframes |
+| `Tabs` | List `inline-flex h-9 items-center rounded-lg bg-muted p-1 text-muted-foreground`; trigger `rounded-md px-3 py-1 text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow` |
+| `Separator` | `shrink-0 bg-border`; horizontal `h-[1px] w-full`, vertical `h-full w-[1px]` |
+| `Kbd` | `inline-flex items-center rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground` |
+| `Badge` | Base `inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold`; variants `default bg-gray-11 text-white`, `secondary`, `destructive`, `outline`, plus `success/warning/info` status fills |
+| `Status` | Colored dot sized via `statusSizeClasses` (sm `h-2 w-2` → 2xl `h-6 w-6`); state colors `online`(success) / `offline`(gray) / `away`(warning) / `busy`(error) / `pro` / `premium` / `vip` |
+| `Progress` | Track `relative h-2 w-full overflow-hidden rounded-full bg-primary/20`; indicator `h-full w-full flex-1 bg-primary transition-all` translated by value |
+
+### Primitives — Feedback
+
+| Component | Key classes |
+|---|---|
+| `Alert` | `relative w-full rounded-lg border p-4 flex items-start gap-3`; only the leading icon is tinted per `success/warning/info/error` variant, sized via `alertIconSizeClasses` |
+| `Skeleton` | `animate-pulse rounded-md bg-muted dark:bg-gray-3` |
+| `Spinner` | `size-4 animate-spin` (Lucide `Loader2`), inherits `currentColor` |
+
+### Composite — Banners
+
+| Component | Source | Key classes / behavior |
+|---|---|---|
+| `Seedance2TopBanner` | nemovideo-business | Full-width 40px strip, gradient `bg-gradient-to-r from-[#9e61ff] via-[#619bff] to-[#6c52ee]`, white text; on mount sets CSS var `--top-banner-height` so layout shifts down; dismissible |
+| `Seedance2LockWatermark` | nemovideo-business | Locked-content overlay, gradient `linear-gradient(135deg, #7C3AED 0%, #13141D 100%)`, centered lock + upgrade CTA |
+| Seedance Discord banner | nemovideo-extensions | Floating pill, text gradient `to-right #9e61ff → #619bff → #45d6c8`, soft bg `rgb(158 97 255 / 10%) …` (hover 15%) |
+| `slogan-banner` | nemovideo-extensions | Hero typewriter headline in Outfit, brand text gradient; marketing-style intro surface |
+
+### Composite — Modals & Dialogs
+
+All wrap the shared `Dialog` primitive unless noted.
+
+| Component | Source | Key classes / behavior |
+|---|---|---|
+| `ExportModal` | nemovideo-business | Success surface gradient `linear-gradient(180deg,#FFFFFF 0%,#E8FFF0 100%)`; CTAs `w-full h-12 rounded-xl` |
+| `UpgradeModal` / `upgrade-modal` | nemovideo-business (root file is a re-export shim) | Content `min-w-[471px] !rounded-[20px]`, Outfit title, plan cards inside |
+| `SwitchToPCModal` | nemovideo-business | `max-w-[320px] rounded-2xl`, prompts desktop for full editor |
+| `BusinessPlanModal` | nemovideo-business | Business-tier plan grid built on `PlanCard` |
+| `CancelPlanDialog` | nemovideo-business | `AlertDialog`-style confirm with destructive action |
+| `auth-modal` | nemovideo-extensions | Dialog `sm:max-w-[500px] p-9 rounded-2xl`; `GlowButton` with mouse-follow radial `rgba(113,69,254,0.5)`; brand headline gradient `#000 → #7145FE → #CD98FF` |
+| `onboarding-modal` | nemovideo-extensions | Hand-rolled overlay `fixed inset-0 z-[10000] bg-black/50 backdrop-blur-sm`; card `w-[520px] rounded-2xl`; scale-to-corner close animation (not the shared Dialog) |
+| `mega-x-popup` | nemovideo-extensions | Dialog `sm:max-w-[500px] rounded-2xl p-9`; brand chip; Discord + primary CTAs `h-11 rounded-xl` |
+| `phone-upload` | nemovideo-extensions | Dialog `sm:max-w-[400px]`; QR frame for handing an upload to mobile |
+| `ReceiptModal` | nemovideo-extensions (subscription) | Receipt detail dialog within the subscription flow |
+
+### Composite — Cards
+
+| Component | Source | Key classes |
+|---|---|---|
+| `TaskCard` | nemovideo-business | `group rounded-xl`; cover `relative aspect-square bg-gray-2 rounded-lg overflow-hidden`; selected `ring-2 ring-brand-1`; title `text-sm font-medium text-gray-10`; time `text-xs text-gray-5`; delete `w-6 h-6 p-0 rounded bg-gray-10/70 opacity-0 group-hover:opacity-100`; loading skeleton `bg-gray-3 animate-pulse` |
+| `VideoCard` | nemovideo-business | Thumbnail card with hover play affordance and metadata footer |
+| `PlanCard` | nemovideo-business | Free / Starter / Pro / Business tiers; Starter shows a `MOST POPULAR` ribbon with gradient `#0AFFBE → #4EADF3`; each tier uses its plan-overlay gradient token |
+| `CreditBoosterPack` | nemovideo-business | Gold surface accent `#E5A913` + `plan-booster-overlay` gradient |
+
+### Composite — Dropdowns & Notifications
+
+| Component | Source | Key classes / behavior |
+|---|---|---|
+| `TaskNotificationDropdown` | nemovideo-business | Panel `w-[400px] rounded-xl`; a `FlyingBall` element animates via the `fly-ball` / `fly-to-notification` keyframes toward the bell on completion |
+| `help-menu` | nemovideo-extensions | Trigger tri-color Discord pill gradient `158,97,255 / 97,155,255 / 91,238,222`; DropdownMenu body; WeChat QR shown in a HoverCard |
+
+### Composite — Panels & Navigation
+
+| Component | Source | Key classes / behavior |
+|---|---|---|
+| `WorkspaceLayout` | nemovideo-business | Dotted canvas `radial-gradient(hsl(var(--gray-5)) 1px, transparent 1px)` at `background-size:16px 16px`; floating glass nav `fixed left-5 top-1/2 rounded-full bg-white/80 dark:bg-gray-3/80 backdrop-blur-lg p-1 shadow-lg border border-gray-4/50`; transparent absolute header; extension `Slot` mount points; z-order `z-[5] < z-20 < z-30` |
+| `MobileHeader` | nemovideo-business | Compact top bar for mobile breakpoint |
+| `SearchHeader` | nemovideo-extensions | Outfit title + `Input h-9` search field |
+| `sidebar` | nemovideo-extensions | Nav item active state `bg-brand-1/[0.12] text-brand-1`, idle `text-gray-7 hover:bg-gray-3` |
+| `user-card-header` / `user-card-sidebar` | nemovideo-extensions | Credits pill whose `bgColor` is chosen per plan tier; avatar + plan label |
+| `payment-callback` | nemovideo-extensions | Logic-only route, renders `null` (no UI chrome) |
+
+### Composite — Effects
+
+| Component | Source | Key classes / behavior |
+|---|---|---|
+| `GlowBorder` | nemovideo-business | Animated AI border using conic gradient `glow-border-conic` rotated by `--glow-angle` via `glow-border-rotate 3s` linear infinite; wraps children in a padded gradient ring |
+
+> Files that look like components but are not: the root `UpgradeModal.tsx`, `VideoUploadPanel.tsx`, and `UserCard.tsx` in nemovideo-business are re-export shims for the real implementations; there is no `SeedanceBanner/` directory or `Seedance2TopBanner.constants.ts` file. Document behavior from the real source modules, not the shims.
+
+### Contrast Notes
+
+The current implementation uses `text-gray-1` on solid status button backgrounds. Keep this document aligned with code. If the team decides to adjust status-button contrast targets later, that should be tracked as a product accessibility change in `packages/design/src/components/ui/button/buttonVariants.ts`, not silently changed in the design document first.
+
+| Component token | Current background | Current text color | Source class |
 |---|---|---|---|
-| `button-success` | `success-7` | `gray-11` | `>= 4.5:1` |
-| `button-warning` | `warning-7` | `gray-11` | `>= 4.5:1` |
-| `button-info` | `info-5` | `gray-11` | `>= 4.5:1` |
-| `button-error` | `error-7` | `gray-11` | `>= 4.5:1` |
+| `button-success` | `success-7` | `gray-1` | `bg-success text-gray-1` |
+| `button-warning` | `warning-7` | `gray-1` | `bg-warning text-gray-1` |
+| `button-info` | `info-5` | `gray-1` | `bg-info text-gray-1` |
+| `button-error` | `error-7` | `gray-1` | `bg-destructive text-gray-1` |
 
 ## Do's and Don'ts
 
@@ -573,7 +699,8 @@ The current implementation uses `text-gray-1` on status button backgrounds. The 
 - Do reference colors through Tailwind classes such as `bg-brand-1`, `text-text-1`, `border-line-1`, `bg-background`, and `text-foreground`.
 - Do keep dark mode as `.dark` class switching through `ThemeProvider`.
 - Do use the website layer tokens only for `apps/nemovideo-website`.
-- Do use `gray-11` text on solid status button backgrounds when documenting or implementing WCAG AA targets.
+- Do document product UI examples as compact workspace/editor surfaces rather than marketing pages.
+- Do keep solid status button text as `gray-1` while the component implementation uses `text-gray-1`.
 - Don't use the Figma `#165DFF` primary as product UI primary; the code primary is `--brand-1: 217 100% 60%`.
 - Don't rewrite HSL channel values into approximate hex values in implementation docs.
 - Don't mix website RGB `--gray-*` variables with product HSL `--gray-*` variables without naming the layer.

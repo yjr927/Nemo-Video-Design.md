@@ -13,7 +13,7 @@ The design system documents:
 - Production design tokens copied from the current Nemo Video codebase.
 - Light mode and dark mode semantic color rules from `@nemo/design`.
 - Website-layer colors documented separately from the product UI palette.
-- A static HTML preview for quickly reviewing the visual system in a browser.
+- A static HTML preview tuned to the current Nemo Video product UI density: compact navigation, workspace-style panels, small metadata, and restrained shadows.
 
 ### Files
 
@@ -34,10 +34,11 @@ Important color rules:
 - Product primary: `--brand-1: 217 100% 60%`, documented in code as `#3369FF`.
 - Dark mode: semantic token switching under `.dark`.
 - Website marketing colors such as `#7145FE` and `brand1-*` are separate website-layer tokens, not replacements for `@nemo/design`.
+- Product UI examples should look like the editor/workspace experience, not a website landing page. Use dense panels, `text-sm`/`text-xs` metadata, `h-9` inputs, `h-10` buttons, and `rounded-lg`/8px surfaces.
 
 ### Preview
 
-Open `design-preview.html` directly in a browser to review the design tokens visually. No dev server is required.
+Open `design-preview.html` directly in a browser to review the design tokens visually. No dev server is required. The preview is a documentation view, but its spacing and hierarchy are intentionally aligned with the product workspace UI rather than marketing-page composition.
 
 ### Validation
 
@@ -47,7 +48,7 @@ The file follows the Google `DESIGN.md` structure:
 npx -y @google/design.md lint design.md
 ```
 
-The current document validates with zero structural errors. Remaining warnings are expected because the file intentionally includes complete color ramps and reference tokens that are not all attached to component examples.
+The current document validates with zero structural errors. Remaining warnings are expected because the file intentionally includes complete color ramps/reference tokens, and because status button text colors are documented to match the current `@nemo/design` implementation even where the linter flags contrast follow-ups.
 
 ---
 
@@ -60,7 +61,7 @@ The current document validates with zero structural errors. Remaining warnings a
 - 从当前 Nemo Video codebase 读取的生产环境 token。
 - `@nemo/design` 中白天模式和黑夜模式的语义色规范。
 - 单独记录 website layer 的营销色，不把它和产品 UI 主色混在一起。
-- 一个可直接在浏览器打开的静态 HTML 预览页。
+- 一个可直接在浏览器打开的静态 HTML 预览页，并且预览页的密度更接近当前 Nemo Video 产品工作台：紧凑导航、面板式信息、小号 metadata、克制阴影。
 
 ### 文件说明
 
@@ -81,10 +82,11 @@ The current document validates with zero structural errors. Remaining warnings a
 - 产品主色：`--brand-1: 217 100% 60%`，代码注释为 `#3369FF`。
 - 黑夜模式：通过 `.dark` 下的语义 token 切换实现。
 - Website 营销色，例如 `#7145FE` 和 `brand1-*`，是 website layer，不覆盖 `@nemo/design` 产品 UI。
+- 产品 UI 示例应该像 editor/workspace，而不是官网落地页。优先使用密集面板、`text-sm`/`text-xs` 信息层级、`h-9` 输入框、`h-10` 按钮和 `rounded-lg`/8px 圆角。
 
 ### 如何预览
 
-直接用浏览器打开 `design-preview.html` 即可查看可视化设计规范，不需要启动本地服务。
+直接用浏览器打开 `design-preview.html` 即可查看可视化设计规范，不需要启动本地服务。这个预览仍然是文档视图，但间距、层级和面板风格已经按产品工作台方向收紧，不再按营销页 hero 方式呈现。
 
 ### 如何校验
 
@@ -94,4 +96,4 @@ The current document validates with zero structural errors. Remaining warnings a
 npx -y @google/design.md lint design.md
 ```
 
-当前文档没有结构错误。剩余 warning 主要来自完整色阶和参考 token 没有全部直接绑定到组件示例，属于预期情况。
+当前文档没有结构错误。剩余 warning 主要来自完整色阶/参考 token 没有全部直接绑定到组件示例，以及状态按钮文字色按当前 `@nemo/design` 代码实现记录时触发的对比度提醒，属于预期情况。
